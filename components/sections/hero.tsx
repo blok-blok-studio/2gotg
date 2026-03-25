@@ -136,8 +136,8 @@ export function Hero() {
                 <div className="rounded-2xl overflow-hidden aspect-square bg-gradient-to-br from-cta/15 to-cta/5 flex items-center justify-center border border-cta/10">
                   <div className="text-center p-6">
                     <MapPin className="h-10 w-10 text-cta mx-auto mb-2" />
-                    <p className="font-[var(--font-heading)] text-lg font-semibold text-foreground">Kyoto</p>
-                    <p className="text-sm text-muted">Japan</p>
+                    <p className="font-[var(--font-heading)] text-lg font-semibold text-foreground">Amalfi Coast</p>
+                    <p className="text-sm text-muted">Italy</p>
                   </div>
                 </div>
               </div>
@@ -145,15 +145,15 @@ export function Hero() {
                 <div className="rounded-2xl overflow-hidden aspect-square bg-gradient-to-br from-primary-light/15 to-primary-light/5 flex items-center justify-center border border-primary-light/10">
                   <div className="text-center p-6">
                     <MapPin className="h-10 w-10 text-primary-light mx-auto mb-2" />
-                    <p className="font-[var(--font-heading)] text-lg font-semibold text-foreground">Machu Picchu</p>
-                    <p className="text-sm text-muted">Peru</p>
+                    <p className="font-[var(--font-heading)] text-lg font-semibold text-foreground">Paris</p>
+                    <p className="text-sm text-muted">France</p>
                   </div>
                 </div>
                 <div className="rounded-2xl overflow-hidden aspect-[3/4] bg-gradient-to-br from-primary-dark/20 to-primary-dark/5 flex items-center justify-center border border-primary-dark/10">
                   <div className="text-center p-6">
                     <MapPin className="h-10 w-10 text-primary-dark mx-auto mb-2" />
-                    <p className="font-[var(--font-heading)] text-lg font-semibold text-foreground">Yellowstone</p>
-                    <p className="text-sm text-muted">United States</p>
+                    <p className="font-[var(--font-heading)] text-lg font-semibold text-foreground">Sicily</p>
+                    <p className="text-sm text-muted">Italy</p>
                   </div>
                 </div>
               </div>

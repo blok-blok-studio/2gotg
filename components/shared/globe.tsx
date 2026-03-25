@@ -62,7 +62,8 @@ export function Globe({ className = "", size = 600 }: GlobeProps) {
         { location: [32.7765, -79.9311], size: 0.06 }, // Charleston
         { location: [21.3069, -157.8583], size: 0.06 }, // Hawaii
       ],
-      onRender: (state) => {
+      // @ts-expect-error — cobe types may lag behind runtime API
+      onRender: (state: Record<string, number>) => {
         if (!pointerInteracting.current) {
           phi += reducedMotion ? 0 : 0.003;
         }
