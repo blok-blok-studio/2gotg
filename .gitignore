@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Design system output (generated per-project)
+design-system/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node (for client projects using this skill)
+node_modules/
+.next/
+.vercel/
+
+# Environment
+.env
+.env.local
+.env.*.local
