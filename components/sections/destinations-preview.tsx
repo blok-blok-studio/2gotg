@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Clock, DollarSign } from "lucide-react";
+import { useHoverCapable } from "@/lib/use-hover-capable";
 
 const destinations = [
   {
@@ -63,6 +64,7 @@ const destinations = [
 ];
 
 export function DestinationsPreview() {
+  const canHover = useHoverCapable();
   return (
     <section className="py-24 lg:py-32 gradient-mesh relative">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-6">
@@ -111,7 +113,7 @@ export function DestinationsPreview() {
               key={dest.name}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ y: -6, rotate: 0.5 }}
+              {...(canHover ? { whileHover: { y: -6, rotate: 0.5 } } : {})}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
             >

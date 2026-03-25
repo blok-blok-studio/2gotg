@@ -27,8 +27,9 @@
 }
 
 /* Base styles */
-html, body {
+html {
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 body {
@@ -37,6 +38,14 @@ body {
   background: var(--color-background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Disable hover animations on touch devices for smoother mobile */
+@media (hover: none) {
+  .group:hover img {
+    transform: none !important;
+  }
 }
 
 /* Dark mode */
@@ -54,9 +63,19 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
 }
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
+/* Smooth scrolling — only for anchor navigation, not programmatic scrolls */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Prevent layout thrashing on mobile */
+@supports (-webkit-touch-callout: none) {
+  body {
+    /* iOS Safari fix — prevent overscroll bounce from causing layout issues */
+    overscroll-behavior-y: none;
+  }
 }
 
 /* Reduced motion */

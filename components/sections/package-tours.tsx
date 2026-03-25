@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Clock, DollarSign, MapPin, Star } from "lucide-react";
 import { ShareLinks } from "@/components/shared/share-links";
+import { useHoverCapable } from "@/lib/use-hover-capable";
 
 const tours = [
   {
@@ -74,6 +75,7 @@ const tours = [
 ];
 
 export function PackageTours() {
+  const canHover = useHoverCapable();
   return (
     <section
       id="package-tours"
@@ -124,7 +126,7 @@ export function PackageTours() {
               key={tour.slug}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ y: -6, rotate: 0.5 }}
+              {...(canHover ? { whileHover: { y: -6, rotate: 0.5, transition: { duration: 0.2 } } } : {})}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
               className="group relative bg-white rounded-2xl border border-border overflow-hidden hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"

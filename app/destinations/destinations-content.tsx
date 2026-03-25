@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { Search, Clock, DollarSign, ArrowRight, Star } from "lucide-react";
+import { useHoverCapable } from "@/lib/use-hover-capable";
 
 const regions = ["All", "Europe", "United States"];
 
@@ -127,6 +128,7 @@ const allDestinations = [
 ];
 
 export function DestinationsContent() {
+  const canHover = useHoverCapable();
   const [activeRegion, setActiveRegion] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -266,7 +268,7 @@ export function DestinationsContent() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
-                  whileHover={{ y: -6, rotate: 0.5 }}
+                  {...(canHover ? { whileHover: { y: -6, rotate: 0.5 } } : {})}
                   transition={{ duration: 0.3 }}
                 >
                   <Link
