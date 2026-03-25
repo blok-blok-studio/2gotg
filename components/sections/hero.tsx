@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Play, Star, MapPin, Users } from "lucide-react";
 
 const stats = [
@@ -126,34 +127,62 @@ export function Hero() {
           >
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
-                <div className="rounded-2xl overflow-hidden aspect-[3/4] bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center border border-primary/10">
-                  <div className="text-center p-6">
-                    <MapPin className="h-10 w-10 text-primary mx-auto mb-2" />
-                    <p className="font-[var(--font-heading)] text-lg font-semibold text-foreground">Santorini</p>
-                    <p className="text-sm text-muted">Greece</p>
+                <div className="relative rounded-2xl overflow-hidden aspect-[3/4] group">
+                  <Image
+                    src="https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=600&q=80"
+                    alt="Santorini Greece — white-washed buildings and blue domes overlooking the Aegean Sea"
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 1024px) 0vw, 25vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <p className="font-[var(--font-heading)] text-lg font-semibold">Santorini</p>
+                    <p className="text-sm text-white/80">Greece</p>
                   </div>
                 </div>
-                <div className="rounded-2xl overflow-hidden aspect-square bg-gradient-to-br from-cta/15 to-cta/5 flex items-center justify-center border border-cta/10">
-                  <div className="text-center p-6">
-                    <MapPin className="h-10 w-10 text-cta mx-auto mb-2" />
-                    <p className="font-[var(--font-heading)] text-lg font-semibold text-foreground">Amalfi Coast</p>
-                    <p className="text-sm text-muted">Italy</p>
+                <div className="relative rounded-2xl overflow-hidden aspect-square group">
+                  <Image
+                    src="https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=600&q=80"
+                    alt="Amalfi Coast Italy — colorful cliffside village overlooking the Mediterranean Sea"
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 1024px) 0vw, 25vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <p className="font-[var(--font-heading)] text-lg font-semibold">Amalfi Coast</p>
+                    <p className="text-sm text-white/80">Italy</p>
                   </div>
                 </div>
               </div>
               <div className="space-y-4 pt-8">
-                <div className="rounded-2xl overflow-hidden aspect-square bg-gradient-to-br from-primary-light/15 to-primary-light/5 flex items-center justify-center border border-primary-light/10">
-                  <div className="text-center p-6">
-                    <MapPin className="h-10 w-10 text-primary-light mx-auto mb-2" />
-                    <p className="font-[var(--font-heading)] text-lg font-semibold text-foreground">Paris</p>
-                    <p className="text-sm text-muted">France</p>
+                <div className="relative rounded-2xl overflow-hidden aspect-square group">
+                  <Image
+                    src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600&q=80"
+                    alt="Paris France — Eiffel Tower at sunset with city skyline"
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 1024px) 0vw, 25vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <p className="font-[var(--font-heading)] text-lg font-semibold">Paris</p>
+                    <p className="text-sm text-white/80">France</p>
                   </div>
                 </div>
-                <div className="rounded-2xl overflow-hidden aspect-[3/4] bg-gradient-to-br from-primary-dark/20 to-primary-dark/5 flex items-center justify-center border border-primary-dark/10">
-                  <div className="text-center p-6">
-                    <MapPin className="h-10 w-10 text-primary-dark mx-auto mb-2" />
-                    <p className="font-[var(--font-heading)] text-lg font-semibold text-foreground">Sicily</p>
-                    <p className="text-sm text-muted">Italy</p>
+                <div className="relative rounded-2xl overflow-hidden aspect-[3/4] group">
+                  <Image
+                    src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=600&q=80"
+                    alt="Sicily Italy — colorful coastal village with Mediterranean waterfront"
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 1024px) 0vw, 25vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <p className="font-[var(--font-heading)] text-lg font-semibold">Sicily</p>
+                    <p className="text-sm text-white/80">Italy</p>
                   </div>
                 </div>
               </div>
