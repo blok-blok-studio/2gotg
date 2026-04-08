@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import { ContactHero } from "./contact-hero";
 import { ContactForm } from "./contact-form";
 import { ContactInfo } from "./contact-info";
+import { FAQ } from "@/components/sections/faq";
 
 export const metadata: Metadata = {
-  title: "Contact Us",
+  title: "Contact Heidie",
   description:
-    "Get in touch with 2GoTG Travel. Request a personalized itinerary, ask questions, or speak with a travel advisor today.",
+    "Contact Heidie at 2 Girls on the Go. Request a personalized itinerary, ask a question, or start planning your next trip today.",
 };
 
 export default function ContactPage() {
@@ -25,6 +26,7 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+      <FAQ />
     </>
   );
 }

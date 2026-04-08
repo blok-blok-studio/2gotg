@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import { MapPin, Calendar, Award, TrendingUp } from "lucide-react";
 
 const milestones = [
-  { year: "2010", title: "Founded", description: "Started with a passion for travel and a commitment to personal service.", icon: Calendar },
-  { year: "2014", title: "IATA Accredited", description: "Earned international accreditation, expanding our global network.", icon: Award },
-  { year: "2018", title: "50+ Countries", description: "Reached partnerships in over 50 countries across six continents.", icon: MapPin },
-  { year: "2024", title: "15,000+ Travelers", description: "Crossed 15,000 happy travelers with a 98% rebooking rate.", icon: TrendingUp },
+  { year: "1985", title: "First Solo Trip", description: "Heidie's lifelong love affair with international travel begins.", icon: Calendar },
+  { year: "2014", title: "IATA Accredited", description: "Earned international accreditation to plan trips worldwide.", icon: Award },
+  { year: "2024", title: "Sicily Summer", description: "Personal scouting trip across Rome, Tuscany, Ortigia, Catania and Mt. Etna.", icon: MapPin },
+  { year: "2026", title: "ITB Berlin", description: "Featured speaker at the world's largest travel trade show.", icon: TrendingUp },
 ];
 
 export function AboutStory() {
@@ -23,28 +23,29 @@ export function AboutStory() {
             transition={{ duration: 0.6 }}
           >
             <p className="text-sm font-semibold text-cta uppercase tracking-widest mb-3">
-              Since 2010
+              Travel is a Mindset
             </p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-6">
-              Building Dreams,<br />
-              <span className="text-primary">One Trip at a Time</span>
+              Built on 40+ Years<br />
+              <span className="text-primary">of Real Travel</span>
             </h2>
             <div className="space-y-4 text-muted leading-relaxed">
               <p>
-                2GoTG Travel was born from a simple belief: travel should be
-                transformative, not transactional. Our founders — seasoned travelers
-                themselves — were frustrated by generic package tours that treated
-                every traveler the same.
+                2 Girls on the Go was born from a simple belief: travel should be
+                transformative, not transactional. Heidie has spent more than four
+                decades exploring the world — solo, with family, and with groups —
+                and now she puts that experience to work for her clients.
               </p>
               <p>
-                So they built something different. A travel agency where every
-                itinerary is crafted by hand, every recommendation comes from
-                first-hand experience, and every traveler is treated like family.
+                Every itinerary is crafted by hand. Every recommendation comes from
+                first-hand experience. Every traveler is treated like family. There are
+                no cookie-cutter packages here — only journeys built around the people
+                taking them.
               </p>
               <p>
-                Today, we serve travelers across the globe with a team of 30+
-                dedicated travel architects, local partnerships in 50+ countries,
-                and an unwavering commitment to creating journeys that matter.
+                Whether it&apos;s a weekend escape close to home or a month abroad on
+                another continent, Heidie believes travel should be accessible to
+                everyone, no matter the budget.
               </p>
             </div>
           </motion.div>

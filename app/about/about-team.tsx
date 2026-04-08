@@ -1,13 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Globe, Award, Heart, MapPin } from "lucide-react";
 
 const credentials = [
   { icon: Globe, label: "IATA Accredited Agent" },
   { icon: Award, label: "ITB Berlin Speaker 2026" },
-  { icon: Heart, label: "Passionate Traveler" },
-  { icon: MapPin, label: "30+ Countries Visited" },
+  { icon: Heart, label: "40+ Years Traveling" },
+  { icon: MapPin, label: "Solo, Group & Family Trips" },
 ];
 
 export function AboutTeam() {
@@ -45,18 +46,19 @@ export function AboutTeam() {
             {/* Photo */}
             <div className="md:col-span-2 flex justify-center">
               <div className="relative">
-                <div className="w-64 h-80 md:w-full md:h-auto md:aspect-[3/4] rounded-2xl bg-gradient-to-br from-primary/20 to-cta/10 border border-primary/10 flex items-center justify-center overflow-hidden">
-                  {/* Placeholder — replace with next/image once photo is in public/images/team/ */}
-                  <div className="text-center p-8">
-                    <div className="h-24 w-24 rounded-full bg-gradient-to-br from-primary to-cta flex items-center justify-center mx-auto mb-4">
-                      <span className="text-white font-bold text-3xl font-[var(--font-heading)]">HH</span>
-                    </div>
-                    <p className="text-sm text-muted">Photo: place heidie-haynes-2gotg-travel-founder.jpg in public/images/team/</p>
-                  </div>
+                <div className="w-64 md:w-full md:h-auto aspect-[3/4] rounded-2xl border border-primary/10 overflow-hidden shadow-xl shadow-primary/10">
+                  <Image
+                    src="/brand/heidie-haynes-2-girls-on-the-go-founder.jpg"
+                    alt="Heidie Haynes — founder of 2 Girls on the Go travel agency"
+                    width={787}
+                    height={1400}
+                    className="object-cover w-full h-full"
+                    priority
+                  />
                 </div>
                 {/* Decorative badge */}
                 <div className="absolute -bottom-4 -right-4 bg-cta text-white px-4 py-2 rounded-xl text-sm font-semibold shadow-lg shadow-cta/25">
-                  14+ Years in Travel
+                  40+ Years Traveling
                 </div>
               </div>
             </div>
@@ -66,24 +68,22 @@ export function AboutTeam() {
               <h3 className="font-[var(--font-heading)] text-2xl lg:text-3xl font-bold text-foreground mb-1">
                 Heidie Haynes
               </h3>
-              <p className="text-primary font-medium mb-6">Founder & Lead Travel Architect</p>
+              <p className="text-primary font-medium mb-6">Founder &amp; Owner</p>
 
               <div className="space-y-4 text-muted leading-relaxed">
                 <p>
-                  With over a decade of experience in the travel industry, Heidie founded 2GoTG Travel
-                  with a mission to create deeply personal, transformative travel experiences. She
-                  believes that travel should never be one-size-fits-all — every trip should reflect
-                  the unique interests, pace, and dreams of the traveler.
+                  As an experienced traveler having traveled for more than 40 years —
+                  individually, with groups, and with family — I love what I do, and that is
+                  introducing the world of travel and culture to others.
                 </p>
                 <p>
-                  From the cobblestone streets of Sicily to the neon-lit Broadway of Nashville,
-                  Heidie has personally explored the destinations she recommends. Her first-hand
-                  knowledge, industry connections, and genuine passion for travel mean every
-                  itinerary comes with insider access you won&apos;t find anywhere else.
+                  Some people wait a lifetime for that one special trip. I believe it is my
+                  privilege to provide moments where others understand that travel is
+                  accessible, whether it is a weekend trip to explore someplace close to home
+                  or a trip to a faraway exotic land.
                 </p>
                 <p>
-                  As an IATA-accredited agent and featured speaker at ITB Berlin 2026, Heidie
-                  brings both professional expertise and an adventurer&apos;s heart to every client relationship.
+                  Travel is a mindset that allows us to explore the world no matter our budget.
                 </p>
               </div>
 

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   MapPin,
   Phone,
@@ -27,14 +28,6 @@ function FacebookIcon({ className }: { className?: string }) {
   );
 }
 
-function TwitterIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-    </svg>
-  );
-}
-
 function YoutubeIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -45,13 +38,11 @@ function YoutubeIcon({ className }: { className?: string }) {
 }
 
 const footerLinks = {
-  destinations: [
-    { label: "Sicily, Italy", href: "/destinations" },
-    { label: "Santorini, Greece", href: "/destinations" },
-    { label: "Paris, France", href: "/destinations" },
-    { label: "Nashville, TN", href: "/destinations" },
-    { label: "Charleston, SC", href: "/destinations" },
-    { label: "New York City", href: "/destinations" },
+  tours: [
+    { label: "Sicily Summer", href: "/tours/sicily-summer" },
+    { label: "Sicilian Discovery", href: "/tours/sicilian-discovery" },
+    { label: "Macedonia Tour", href: "/tours/macedonia-tour" },
+    { label: "Berlin Adventure", href: "/tours/berlin-adventure" },
   ],
   experiences: [
     { label: "Luxury Getaways", href: "/experiences#luxury" },
@@ -62,11 +53,9 @@ const footerLinks = {
     { label: "Corporate Retreats", href: "/experiences#corporate" },
   ],
   company: [
-    { label: "About Us", href: "/about" },
-    { label: "Our Team", href: "/about#team" },
-    { label: "Testimonials", href: "/about#testimonials" },
-    { label: "Careers", href: "/careers" },
-    { label: "Press", href: "/press" },
+    { label: "About Heidie", href: "/about" },
+    { label: "Reviews", href: "/about#testimonials" },
+    { label: "Plan a Trip", href: "/plan" },
     { label: "Contact", href: "/contact" },
   ],
 };
@@ -74,7 +63,6 @@ const footerLinks = {
 const socialLinks = [
   { icon: InstagramIcon, href: siteConfig.social.instagram, label: "Instagram" },
   { icon: FacebookIcon, href: siteConfig.social.facebook, label: "Facebook" },
-  { icon: TwitterIcon, href: siteConfig.social.twitter, label: "Twitter" },
   { icon: YoutubeIcon, href: siteConfig.social.youtube, label: "YouTube" },
 ];
 
@@ -86,25 +74,30 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
           {/* Brand column */}
           <div className="lg:col-span-2">
-            <Link href="/" className="inline-flex items-center gap-2 group">
-              <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-primary to-cta flex items-center justify-center transition-transform duration-200 group-hover:scale-105">
-                <span className="text-white font-[var(--font-heading)] font-bold text-lg">
-                  2G
-                </span>
+            <Link href="/" className="inline-flex items-center gap-2.5 group">
+              <div className="h-12 w-12 rounded-lg bg-white/95 flex items-center justify-center transition-transform duration-200 group-hover:scale-105 p-1.5">
+                <Image
+                  src="/brand/2-girls-on-the-go-travel-logo-v2.png"
+                  alt="2 Girls on the Go travel agency logo"
+                  width={48}
+                  height={48}
+                  className="object-contain"
+                />
               </div>
               <div className="flex flex-col leading-none">
-                <span className="font-[var(--font-heading)] font-bold text-xl text-white tracking-tight">
-                  2GoTG
+                <span className="font-[var(--font-heading)] font-bold text-lg text-white tracking-tight">
+                  2 Girls on the Go
                 </span>
-                <span className="text-[10px] uppercase tracking-[0.2em] text-white/50 font-medium">
-                  Travel
+                <span className="text-[10px] uppercase tracking-[0.18em] text-white/50 font-medium">
+                  Travel is a Mindset
                 </span>
               </div>
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/60">
-              Crafting extraordinary travel experiences since 2010. From pristine
-              beaches to mountain peaks, we turn your dream destinations into
-              reality with expert planning and personal care.
+              A boutique travel agency owned by Heidie Haynes. Custom international and
+              domestic itineraries built on more than 40 years of personal travel
+              experience. We make travel accessible — whether it&apos;s a weekend close
+              to home or an exotic month abroad.
             </p>
             <div className="mt-6 space-y-3 text-sm">
               <div className="flex items-center gap-2 text-white/60">
@@ -122,13 +115,13 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Destinations */}
+          {/* Tours */}
           <div>
             <h3 className="font-[var(--font-heading)] font-semibold text-white mb-4">
-              Destinations
+              Tours
             </h3>
             <ul className="space-y-2.5">
-              {footerLinks.destinations.map((link) => (
+              {footerLinks.tours.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}

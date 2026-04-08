@@ -1,22 +1,20 @@
 export const siteConfig = {
-  name: "2GoTG Travel",
-  tagline: "Your Gateway to the World",
+  name: "2 Girls on the Go",
+  tagline: "Travel is a Mindset",
   description:
-    "Premium international and domestic travel experiences. Curated itineraries, expert guides, and unforgettable adventures across every continent.",
-  url: "https://2gotg.com",
+    "Boutique travel agency owned by Heidie Haynes. Custom international and domestic itineraries with 40+ years of personal travel experience behind every trip.",
+  url: "https://2girlsonthego.com",
   contact: {
-    email: "hello@2gotg.com",
+    email: "hello@2girlsonthego.com",
     phone: "+1 (555) 234-5678",
-    address: "123 Travel Plaza, Suite 400, New York, NY 10001",
+    address: "United States — serving travelers worldwide",
   },
   social: {
-    instagram: "https://instagram.com/2gotg",
-    facebook: "https://facebook.com/2gotg",
-    twitter: "https://x.com/2gotg",
-    youtube: "https://youtube.com/@2gotg",
+    instagram: "https://instagram.com/2girlsonthego",
+    facebook: "https://facebook.com/2girlsonthego",
+    youtube: "https://youtube.com/@2girlsonthego",
   },
   nav: [
-    { label: "Destinations", href: "/destinations" },
     { label: "Tours", href: "/#package-tours" },
     { label: "Experiences", href: "/experiences" },
     { label: "About", href: "/about" },
