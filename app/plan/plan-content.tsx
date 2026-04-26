@@ -415,6 +415,9 @@ export function PlanContent() {
                   title="Google Calendar Booking Widget"
                   className="w-full"
                   style={{ height: 450, border: "none" }}
+                  sandbox="allow-scripts allow-popups allow-forms allow-same-origin"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  loading="lazy"
                   srcDoc={`
                     <div style="
                       display:flex;

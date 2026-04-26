@@ -29,7 +29,7 @@ export function ContactForm() {
         to you within 24 hours with a personalized plan.
       </p>
 
-      <form className="space-y-6">
+      <form className="space-y-6" method="post" action="/api/contact" autoComplete="on">
         <div className="grid sm:grid-cols-2 gap-6">
           <div>
             <label htmlFor="firstName" className="block text-sm font-medium text-foreground mb-2">
@@ -37,7 +37,11 @@ export function ContactForm() {
             </label>
             <input
               id="firstName"
+              name="firstName"
               type="text"
+              required
+              maxLength={80}
+              autoComplete="given-name"
               placeholder="Your first name"
               className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
             />
@@ -48,7 +52,11 @@ export function ContactForm() {
             </label>
             <input
               id="lastName"
+              name="lastName"
               type="text"
+              required
+              maxLength={80}
+              autoComplete="family-name"
               placeholder="Your last name"
               className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
             />
@@ -62,7 +70,12 @@ export function ContactForm() {
             </label>
             <input
               id="email"
+              name="email"
               type="email"
+              required
+              maxLength={254}
+              autoComplete="email"
+              inputMode="email"
               placeholder="you@example.com"
               className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
             />
@@ -73,7 +86,11 @@ export function ContactForm() {
             </label>
             <input
               id="phone"
+              name="phone"
               type="tel"
+              maxLength={32}
+              autoComplete="tel"
+              inputMode="tel"
               placeholder="+1 (555) 000-0000"
               className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
             />
@@ -86,7 +103,10 @@ export function ContactForm() {
           </label>
           <input
             id="destination"
+            name="destination"
             type="text"
+            maxLength={120}
+            autoComplete="off"
             placeholder="e.g., Bali, Italy, National Parks..."
             className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
           />
@@ -99,6 +119,7 @@ export function ContactForm() {
             </label>
             <select
               id="travelers"
+              name="travelers"
               className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
             >
               <option value="">Select...</option>
@@ -115,6 +136,7 @@ export function ContactForm() {
             </label>
             <select
               id="budget"
+              name="budget"
               className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
             >
               <option value="">Select...</option>
@@ -133,7 +155,7 @@ export function ContactForm() {
           <div className="flex flex-wrap gap-2">
             {travelStyles.map((style) => (
               <label key={style} className="group">
-                <input type="checkbox" className="sr-only peer" />
+                <input type="checkbox" name="travelStyle" value={style} className="sr-only peer" />
                 <span className="inline-flex px-4 py-2 rounded-full text-sm border border-border text-muted peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary hover:border-primary/30 hover:text-foreground transition-all duration-200">
                   {style}
                 </span>
@@ -148,7 +170,9 @@ export function ContactForm() {
           </label>
           <textarea
             id="message"
+            name="message"
             rows={4}
+            maxLength={2000}
             placeholder="Special interests, must-see spots, dietary needs, accessibility requirements..."
             className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none"
           />
