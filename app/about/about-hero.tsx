@@ -7,9 +7,7 @@ export function AboutHero() {
     <section className="relative pt-36 pb-16 lg:pt-44 lg:pb-20 gradient-mesh">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-6">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto"
         >
           <p className="text-sm font-semibold text-cta uppercase tracking-widest mb-3">

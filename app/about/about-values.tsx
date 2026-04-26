@@ -32,18 +32,11 @@ export function AboutValues() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
             className="text-sm font-semibold text-cta uppercase tracking-widest mb-3"
           >
             What Drives Us
           </motion.p>
           <motion.h2
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight"
           >
             Our <span className="text-primary">Values</span>
@@ -54,10 +47,6 @@ export function AboutValues() {
           {values.map((v, i) => (
             <motion.div
               key={v.title}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
               className="p-8 rounded-2xl bg-white border border-border hover:border-primary/20 transition-all duration-300"
             >
               <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5">

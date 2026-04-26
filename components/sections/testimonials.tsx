@@ -40,7 +40,6 @@ export function Testimonials() {
   return (
     <section className="py-24 lg:py-32" style={{ background: "linear-gradient(to bottom, #F0F9FF, white 15%, white 85%, #F0F9FF)" }}>
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-6">
-        {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <p className="text-sm font-semibold text-cta uppercase tracking-widest mb-3">
             Traveler Stories
@@ -50,14 +49,10 @@ export function Testimonials() {
           </h2>
         </div>
 
-        {/* Grid */}
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
           {testimonials.map((t, i) => (
             <motion.div
               key={t.name}
-              initial={prefersReducedMotion ? false : { y: 50, scale: 0.94 }}
-              whileInView={{ y: 0, scale: 1 }}
-              viewport={{ once: true, amount: 0.15, margin: "0px 0px 200px 0px" }}
               whileHover={
                 prefersReducedMotion
                   ? undefined
@@ -68,15 +63,7 @@ export function Testimonials() {
                       transition: { type: "spring", stiffness: 320, damping: 14 },
                     }
               }
-              transition={{
-                type: "spring",
-                stiffness: 110,
-                damping: 11,
-                mass: 0.9,
-                delay: i * 0.08,
-              }}
-              style={{ willChange: "transform" }}
-              className="relative p-8 rounded-2xl border border-border bg-background hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-[border-color,box-shadow] duration-300"
+              className="relative p-8 rounded-2xl border border-border bg-background hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10 transition-[border-color,box-shadow] duration-300 cursor-default"
             >
               <Quote className="absolute top-6 right-6 h-8 w-8 text-primary/10" />
               <div className="flex items-center gap-4 mb-5">
@@ -98,7 +85,6 @@ export function Testimonials() {
           ))}
         </div>
 
-        {/* Social proof bar */}
         <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 lg:gap-12 text-center">
           <div>
             <p className="text-2xl sm:text-3xl font-bold text-foreground">4.9/5</p>

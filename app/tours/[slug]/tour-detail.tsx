@@ -88,9 +88,7 @@ export function TourDetail({ tour }: { tour: TourData }) {
         <div className="absolute inset-0 flex items-end">
           <div className="mx-auto max-w-7xl w-full px-5 sm:px-8 lg:px-6 pb-12">
             <motion.div
-              initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
             >
               <div className="flex items-center gap-2 mb-3">
                 <span className="inline-flex items-center gap-1.5 bg-white/20 backdrop-blur-md text-white text-xs font-semibold px-3 py-1.5 rounded-full">
@@ -134,10 +132,6 @@ export function TourDetail({ tour }: { tour: TourData }) {
             <div className="lg:col-span-2 space-y-14">
               {/* Description */}
               <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
               >
                 <h2 className="text-2xl sm:text-3xl font-bold mb-4">
                   About This Tour
@@ -149,10 +143,6 @@ export function TourDetail({ tour }: { tour: TourData }) {
 
               {/* Visual Calendar */}
               <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
               >
                 <h2 className="text-2xl sm:text-3xl font-bold mb-6 flex items-center gap-2">
                   <Calendar className="h-6 w-6 text-primary" />
@@ -191,10 +181,6 @@ export function TourDetail({ tour }: { tour: TourData }) {
 
               {/* Day-by-Day Itinerary */}
               <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
               >
                 <h2 className="text-2xl sm:text-3xl font-bold mb-6">
                   Day-by-Day Itinerary
@@ -219,10 +205,6 @@ export function TourDetail({ tour }: { tour: TourData }) {
               {/* Sticky booking card */}
               <div className="lg:sticky lg:top-28">
                 <motion.div
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5 }}
                   className="bg-white rounded-2xl border border-border p-6 shadow-lg shadow-primary/5"
                 >
                   <div className="text-center mb-6">
@@ -275,10 +257,6 @@ export function TourDetail({ tour }: { tour: TourData }) {
 
                 {/* What's included */}
                 <motion.div
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.1 }}
                   className="bg-white rounded-2xl border border-border p-6 mt-6"
                 >
                   <h3 className="text-lg font-semibold mb-4">
@@ -299,10 +277,6 @@ export function TourDetail({ tour }: { tour: TourData }) {
 
                 {/* Share */}
                 <motion.div
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
                   className="bg-white rounded-2xl border border-border p-6 mt-6"
                 >
                   <h3 className="text-lg font-semibold mb-4">
@@ -381,10 +355,8 @@ function DayAccordion({
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
             className="overflow-hidden"
           >
             <div className="px-5 pb-5 space-y-4">

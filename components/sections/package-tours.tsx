@@ -186,29 +186,17 @@ export function PackageTours() {
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-14 lg:mb-20">
           <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
             className="text-sm font-semibold text-cta uppercase tracking-widest mb-3"
           >
             Travel With Us
           </motion.p>
           <motion.h2
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight"
           >
             Find Your{" "}
             <span className="text-primary">Next Adventure</span>
           </motion.h2>
           <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
             className="mt-4 text-lg text-muted"
           >
             Expertly planned trips with local guides, curated experiences, and
@@ -221,10 +209,6 @@ export function PackageTours() {
           {featuredTours.map((tour, i) => (
             <motion.div
               key={tour.slug}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
               className="group bg-white rounded-2xl border border-border overflow-hidden hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
             >
               <div className="grid md:grid-cols-5">
@@ -407,10 +391,6 @@ export function PackageTours() {
 
         {/* Closer to Home */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
           className="mb-12"
         >
           <div className="mb-6">
@@ -421,10 +401,6 @@ export function PackageTours() {
             {closerToHome.map((dest, i) => (
               <motion.div
                 key={dest.name}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
                 className="p-5 rounded-2xl border border-border bg-white hover:border-primary/30 hover:shadow-md transition-all duration-300 cursor-pointer group"
               >
                 <MapPin className="h-4 w-4 text-primary mb-3 group-hover:scale-110 transition-transform" />
@@ -437,10 +413,6 @@ export function PackageTours() {
 
         {/* Just Around the Corner */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
         >
           <div className="mb-6">
             <p className="text-sm font-semibold text-cta uppercase tracking-widest mb-1">Just Around the Corner</p>
@@ -450,10 +422,6 @@ export function PackageTours() {
             {localEvents.map((event, i) => (
               <motion.div
                 key={event.name}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
                 className="p-5 rounded-2xl border border-border bg-white hover:border-primary/30 hover:shadow-md transition-all duration-300 group"
               >
                 <Calendar className="h-4 w-4 text-cta mb-3 group-hover:scale-110 transition-transform" />

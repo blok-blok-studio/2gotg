@@ -72,29 +72,17 @@ export function DestinationsPreview() {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-14 gap-6">
           <div>
             <motion.p
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
               className="text-sm font-semibold text-cta uppercase tracking-widest mb-3"
             >
               Trending Destinations
             </motion.p>
             <motion.h2
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
               className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight"
             >
               Where Will You <span className="text-primary">Go Next?</span>
             </motion.h2>
           </div>
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
           >
             <Link
               href="/destinations"
@@ -111,11 +99,7 @@ export function DestinationsPreview() {
           {destinations.map((dest, i) => (
             <motion.div
               key={dest.name}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
               {...(canHover ? { whileHover: { y: -6, rotate: 0.5 } } : {})}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
             >
               <Link
                 href="/destinations"

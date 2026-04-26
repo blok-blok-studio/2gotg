@@ -16,18 +16,11 @@ export function AboutTeam() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
             className="text-sm font-semibold text-cta uppercase tracking-widest mb-3"
           >
             Meet the Founder
           </motion.p>
           <motion.h2
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight"
           >
             Your Travel <span className="text-primary">Architect</span>
@@ -35,10 +28,6 @@ export function AboutTeam() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
           className="max-w-4xl mx-auto"
         >
           <div className="grid md:grid-cols-5 gap-10 lg:gap-16 items-center">

@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import {
   Globe,
   Shield,
@@ -35,74 +32,31 @@ const features = [
   },
 ];
 
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5 },
-  },
-};
-
 export function Features() {
   return (
     <section className="py-24 lg:py-32 relative" style={{ background: "linear-gradient(to bottom, #F0F9FF, white 15%, white 85%, #F0F9FF)" }}>
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-6">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 lg:mb-20">
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-sm font-semibold text-cta uppercase tracking-widest mb-3"
-          >
+          <p className="text-sm font-semibold text-cta uppercase tracking-widest mb-3">
             Why Travel With Us
-          </motion.p>
-          <motion.h2
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight"
-          >
+          </p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
             Your Journey,{" "}
             <span className="text-primary">Perfected</span>
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-4 text-lg text-muted"
-          >
+          </h2>
+          <p className="mt-4 text-lg text-muted">
             We go beyond booking flights and hotels. We architect experiences
             that stay with you long after you return home.
-          </motion.p>
+          </p>
         </div>
 
         {/* Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid md:grid-cols-2 gap-6 lg:gap-8"
-        >
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
           {features.map((feature) => (
-            <motion.div
+            <div
               key={feature.title}
-              variants={itemVariants}
-              className="group relative p-8 rounded-2xl border border-border bg-white hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5"
+              className="group relative p-8 rounded-2xl border border-border bg-white hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1"
             >
               <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center mb-5 group-hover:from-primary/20 group-hover:to-primary/10 transition-colors duration-300">
                 <feature.icon className="h-6 w-6 text-primary" />
@@ -113,9 +67,9 @@ export function Features() {
               <p className="text-sm text-muted leading-relaxed">
                 {feature.description}
               </p>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -151,9 +151,7 @@ export function DestinationsContent() {
       <section className="relative pt-36 pb-16 lg:pt-44 lg:pb-20 gradient-mesh">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-6">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >
             <p className="text-sm font-semibold text-cta uppercase tracking-widest mb-3">
@@ -235,7 +233,6 @@ export function DestinationsContent() {
           {/* No results */}
           {filtered.length === 0 && (
             <motion.div
-              initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               className="text-center py-20"
             >
@@ -265,11 +262,9 @@ export function DestinationsContent() {
                 <motion.div
                   key={dest.name}
                   layout
-                  initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   {...(canHover ? { whileHover: { y: -6, rotate: 0.5 } } : {})}
-                  transition={{ duration: 0.3 }}
                 >
                   <Link
                     href={`/contact?destination=${encodeURIComponent(dest.name)}`}

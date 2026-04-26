@@ -10,34 +10,18 @@ export function CTA() {
     <section className="py-24 lg:py-32 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#0B1120] via-primary-dark to-[#0B1120]" />
-      <div className="absolute inset-0">
-        <motion.div
-          animate={{ x: [0, 50, 0], y: [0, -30, 0] }}
-          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl"
-        />
-        <motion.div
-          animate={{ x: [0, -30, 0], y: [0, 40, 0] }}
-          transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-cta/8 rounded-full blur-3xl"
-        />
+      <div className="absolute inset-0" aria-hidden>
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-cta/8 rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-4xl px-5 sm:px-8 lg:px-6 text-center">
         <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
           className="text-sm font-semibold text-cta uppercase tracking-widest mb-4"
         >
           Start Your Adventure
         </motion.p>
         <motion.h2
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
           className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight text-white leading-tight"
         >
           Ready to Explore
@@ -47,20 +31,12 @@ export function CTA() {
           </span>
         </motion.h2>
         <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
           className="mt-6 text-base sm:text-lg text-white/60 max-w-2xl mx-auto"
         >
           Tell us your dream destination and travel style. Our expert advisors
           will craft a personalized itinerary you&apos;ll love — no commitment required.
         </motion.p>
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
           className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Link

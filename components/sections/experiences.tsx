@@ -63,28 +63,16 @@ export function Experiences() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
             className="text-sm font-semibold text-cta uppercase tracking-widest mb-3"
           >
             Travel Your Way
           </motion.p>
           <motion.h2
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight"
           >
             Experiences for <span className="text-primary">Every Traveler</span>
           </motion.h2>
           <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
             className="mt-4 text-lg text-muted"
           >
             Whether you&apos;re chasing thrills or seeking serenity, we have the perfect
@@ -96,10 +84,6 @@ export function Experiences() {
           {experiences.map((exp, i) => (
             <motion.div
               key={exp.title}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
             >
               <Link
                 href="/experiences"

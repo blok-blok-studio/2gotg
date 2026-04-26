@@ -49,10 +49,6 @@ export function AboutStory() {
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Story */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
           >
             <p className="text-sm font-semibold text-cta uppercase tracking-widest mb-3">
               Her Story
@@ -99,19 +95,11 @@ export function AboutStory() {
 
           {/* Timeline */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
             className="space-y-4"
           >
             {milestones.map((m, i) => (
               <motion.div
                 key={m.year}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
                 className="flex items-start gap-4 p-6 rounded-2xl border border-border bg-background hover:border-primary/20 transition-all duration-300"
               >
                 <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">

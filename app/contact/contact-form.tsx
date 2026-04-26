@@ -17,9 +17,7 @@ const travelStyles = [
 export function ContactForm() {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
     >
       <h2 className="font-[var(--font-heading)] text-2xl font-bold text-foreground mb-2">
         Request a Custom Itinerary

@@ -25,9 +25,7 @@ export function Hero() {
           {/* Left content */}
           <div className="text-center lg:text-left">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
             >
               <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 text-sm text-primary font-medium mb-6">
                 <span className="h-1.5 w-1.5 bg-primary rounded-full animate-pulse" />
@@ -36,9 +34,7 @@ export function Hero() {
             </motion.div>
 
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
               className="text-[2.5rem] lg:text-6xl xl:text-7xl font-bold leading-[1.05] tracking-tight"
             >
               Discover the
@@ -51,9 +47,7 @@ export function Hero() {
             </motion.h1>
 
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
               className="mt-6 text-base sm:text-lg md:text-xl text-muted max-w-md lg:max-w-lg mx-auto lg:mx-0 leading-relaxed"
             >
               From exotic international escapes to hidden domestic gems,
@@ -61,9 +55,7 @@ export function Hero() {
             </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
               className="mt-8 flex flex-col lg:flex-row lg:flex-wrap items-stretch lg:items-center justify-center lg:justify-start gap-3 lg:gap-4 max-w-sm mx-auto lg:mx-0 lg:max-w-none"
             >
               <Link
@@ -85,9 +77,7 @@ export function Hero() {
 
             {/* Stats */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.45 }}
               className="mt-12 grid grid-cols-3 gap-4 sm:flex sm:items-center sm:justify-center lg:justify-start sm:gap-8 lg:gap-10"
             >
               {stats.map((stat) => (
@@ -106,9 +96,7 @@ export function Hero() {
 
           {/* Right — Image mosaic */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
             className="relative hidden lg:block"
           >
             <div className="grid grid-cols-2 gap-4">
