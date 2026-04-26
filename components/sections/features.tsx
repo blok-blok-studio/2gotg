@@ -4,9 +4,7 @@ import { motion } from "framer-motion";
 import {
   Globe,
   Shield,
-  HeadphonesIcon,
   Sparkles,
-  CreditCard,
   Clock,
 } from "lucide-react";
 
@@ -15,37 +13,25 @@ const features = [
     icon: Globe,
     title: "Global Network",
     description:
-      "Access to 50+ countries with trusted local partners, exclusive accommodations, and insider knowledge that transforms ordinary trips into extraordinary journeys.",
+      "Access to destinations worldwide through trusted local partners, exclusive accommodations, and insider knowledge that turns ordinary trips into extraordinary journeys.",
   },
   {
     icon: Sparkles,
-    title: "Tailor-Made Itineraries",
+    title: "Tailor Made Itineraries",
     description:
-      "Every trip is designed around you. Our travel architects craft bespoke experiences that match your pace, interests, and dreams — no cookie-cutter packages.",
+      "Every trip is designed around you. We craft experiences that match your pace, interests, and dreams. No cookie cutter packages here.",
   },
   {
     icon: Shield,
     title: "Travel Protection",
     description:
-      "Comprehensive travel insurance, 24/7 emergency assistance, and flexible cancellation policies so you can book with complete peace of mind.",
-  },
-  {
-    icon: HeadphonesIcon,
-    title: "24/7 Concierge",
-    description:
-      "Your dedicated travel concierge is just a call away — before, during, and after your trip. Real humans, real help, any timezone.",
-  },
-  {
-    icon: CreditCard,
-    title: "Flexible Payments",
-    description:
-      "Split your trip into easy installments with zero interest. We believe financial flexibility shouldn't limit your adventures.",
+      "Comprehensive travel insurance available, 24/7 emergency assistance, and flexible cancellation policies so you can book with complete peace of mind.",
   },
   {
     icon: Clock,
-    title: "Last-Minute Deals",
+    title: "Last Minute Deals",
     description:
-      "Spontaneous travelers, we've got you. Access exclusive last-minute offers and flash deals that make impulse adventures affordable.",
+      "Spontaneous travelers, we've got you. Assistance with last minute deals that make impulse adventures affordable.",
   },
 ];
 
@@ -110,7 +96,7 @@ export function Features() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+          className="grid md:grid-cols-2 gap-6 lg:gap-8"
         >
           {features.map((feature) => (
             <motion.div

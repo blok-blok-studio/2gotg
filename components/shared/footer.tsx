@@ -1,11 +1,11 @@
 import Link from "next/link";
 import {
-  MapPin,
   Phone,
   Mail,
   Globe,
   Shield,
   CreditCard,
+  Link2,
 } from "lucide-react";
 import { siteConfig } from "@/config/site";
 
@@ -27,31 +27,14 @@ function FacebookIcon({ className }: { className?: string }) {
   );
 }
 
-function TwitterIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-    </svg>
-  );
-}
-
-function YoutubeIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
-      <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
-    </svg>
-  );
-}
-
 const footerLinks = {
   destinations: [
     { label: "Sicily, Italy", href: "/destinations" },
-    { label: "Santorini, Greece", href: "/destinations" },
-    { label: "Paris, France", href: "/destinations" },
-    { label: "Nashville, TN", href: "/destinations" },
-    { label: "Charleston, SC", href: "/destinations" },
-    { label: "New York City", href: "/destinations" },
+    { label: "Macedonia", href: "/destinations" },
+    { label: "Napa Valley", href: "/destinations" },
+    { label: "Savannah", href: "/destinations" },
+    { label: "Gulf Shores", href: "/destinations" },
+    { label: "Washington, D.C.", href: "/destinations" },
   ],
   experiences: [
     { label: "Luxury Getaways", href: "/experiences#luxury" },
@@ -59,7 +42,7 @@ const footerLinks = {
     { label: "Cultural Immersion", href: "/experiences#cultural" },
     { label: "Honeymoon Packages", href: "/experiences#honeymoon" },
     { label: "Group Tours", href: "/experiences#group" },
-    { label: "Corporate Retreats", href: "/experiences#corporate" },
+    { label: "Volunteer Travel", href: "/experiences#volunteer" },
   ],
   company: [
     { label: "About Us", href: "/about" },
@@ -74,8 +57,7 @@ const footerLinks = {
 const socialLinks = [
   { icon: InstagramIcon, href: siteConfig.social.instagram, label: "Instagram" },
   { icon: FacebookIcon, href: siteConfig.social.facebook, label: "Facebook" },
-  { icon: TwitterIcon, href: siteConfig.social.twitter, label: "Twitter" },
-  { icon: YoutubeIcon, href: siteConfig.social.youtube, label: "YouTube" },
+  { icon: Link2, href: siteConfig.social.linktree, label: "Linktree" },
 ];
 
 export function Footer() {
@@ -102,15 +84,11 @@ export function Footer() {
               </div>
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/60">
-              Crafting extraordinary travel experiences since 2010. From pristine
-              beaches to mountain peaks, we turn your dream destinations into
-              reality with expert planning and personal care.
+              Crafting extraordinary travel experiences built on 40 plus years of
+              firsthand exploration. From pristine beaches to mountain peaks, we turn
+              your dream destinations into reality.
             </p>
             <div className="mt-6 space-y-3 text-sm">
-              <div className="flex items-center gap-2 text-white/60">
-                <MapPin className="h-4 w-4 text-primary shrink-0" />
-                {siteConfig.contact.address}
-              </div>
               <div className="flex items-center gap-2 text-white/60">
                 <Phone className="h-4 w-4 text-primary shrink-0" />
                 {siteConfig.contact.phone}
@@ -184,11 +162,11 @@ export function Footer() {
         <div className="mt-12 pt-8 border-t border-white/10 grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs text-white/40">
           <div className="flex items-center gap-2">
             <Shield className="h-4 w-4" />
-            <span>ASTA Verified</span>
+            <span>Certified Fora Advisor</span>
           </div>
           <div className="flex items-center gap-2">
             <Globe className="h-4 w-4" />
-            <span>IATA Accredited</span>
+            <span>International and Domestic Travel</span>
           </div>
           <div className="flex items-center gap-2">
             <CreditCard className="h-4 w-4" />

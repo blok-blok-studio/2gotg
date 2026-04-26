@@ -8,7 +8,7 @@ const testimonials = [
     name: "Sarah & James Mitchell",
     trip: "Bali Honeymoon, 2024",
     rating: 5,
-    text: "2GoTG turned our honeymoon into an absolute fairy tale. From the private villa in Ubud to the sunset dinner on the beach in Seminyak — every detail was perfect. Our concierge Maya even arranged a surprise traditional dance performance. We'll never book travel any other way.",
+    text: "2GoTG turned our honeymoon into an absolute fairy tale. From the private villa in Ubud to the sunset dinner on the beach in Seminyak, every detail was perfect. They even arranged a surprise traditional dance performance. We will never book travel any other way.",
     avatar: "SM",
   },
   {
@@ -22,15 +22,15 @@ const testimonials = [
     name: "The Rodriguez Family",
     trip: "Grand Canyon Adventure, 2024",
     rating: 5,
-    text: "Traveling with three kids (ages 6-12) can be chaos. 2GoTG planned an itinerary that kept everyone engaged — from mule rides on the rim to stargazing programs. They even handled the dietary restrictions without us having to ask twice.",
+    text: "Traveling with three kids ages 6 through 12 can be chaos. 2GoTG planned an itinerary that kept everyone engaged, from mule rides on the rim to stargazing programs. They even handled the dietary restrictions without us having to ask twice.",
     avatar: "RF",
   },
   {
-    name: "Amara & Kofi Osei",
-    trip: "Morocco Expedition, 2023",
+    name: "Doug Lowery",
+    trip: "India, 2024",
     rating: 5,
-    text: "The desert glamping experience was unlike anything we've imagined. Sleeping under the Saharan stars in a luxury tent, waking up to camel rides at sunrise — this is the kind of trip that changes you. 2GoTG made every moment seamless.",
-    avatar: "AO",
+    text: "It was a great experience working with your travel agency from beginning to end. You found excellent rates for our trip and secured aisle seats for all of us, which made a big difference on the long flights. You were always available to answer any questions we had, making the entire process seamless and stress free. I would highly recommend your services.",
+    avatar: "DL",
   },
 ];
 
@@ -56,7 +56,7 @@ export function Testimonials() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight"
           >
-            Loved by <span className="text-primary">Thousands</span>
+            Traveler Stories <span className="text-primary">&amp; Reviews</span>
           </motion.h2>
         </div>
 
@@ -112,8 +112,8 @@ export function Testimonials() {
             <p className="text-xs text-muted mt-1">Rebooking Rate</p>
           </div>
           <div>
-            <p className="text-2xl sm:text-3xl font-bold text-foreground">14 Years</p>
-            <p className="text-xs text-muted mt-1">In Business</p>
+            <p className="text-2xl sm:text-3xl font-bold text-foreground">40+ Years</p>
+            <p className="text-xs text-muted mt-1">of Travel Experience</p>
           </div>
         </motion.div>
       </div>

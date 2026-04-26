@@ -1,19 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Clock, Globe, Shield } from "lucide-react";
+import { Phone, Mail, Clock, Globe, Shield } from "lucide-react";
 import { siteConfig } from "@/config/site";
 
 const info = [
   {
-    icon: MapPin,
-    title: "Visit Us",
-    lines: [siteConfig.contact.address],
-  },
-  {
     icon: Phone,
     title: "Call Us",
-    lines: [siteConfig.contact.phone, "Mon-Fri 9am-7pm EST"],
+    lines: [siteConfig.contact.phone, "Mon through Fri, 9am to 7pm CST"],
   },
   {
     icon: Mail,
@@ -23,7 +18,7 @@ const info = [
   {
     icon: Clock,
     title: "Business Hours",
-    lines: ["Monday - Friday: 9:00 AM - 7:00 PM", "Saturday: 10:00 AM - 4:00 PM", "Sunday: Closed"],
+    lines: ["Monday through Friday: 9:00 AM to 7:00 PM", "Saturday: 10:00 AM to 4:00 PM", "Sunday: Closed"],
   },
 ];
 
@@ -65,11 +60,11 @@ export function ContactInfo() {
         <ul className="space-y-3 text-sm text-muted">
           <li className="flex items-start gap-2">
             <Globe className="h-4 w-4 text-primary shrink-0 mt-0.5" />
-            IATA Accredited Travel Agency
+            Certified Fora Advisor
           </li>
           <li className="flex items-start gap-2">
             <Shield className="h-4 w-4 text-primary shrink-0 mt-0.5" />
-            ASTA Verified Member
+            40 Plus Years of Travel Experience
           </li>
           <li className="flex items-start gap-2">
             <Shield className="h-4 w-4 text-primary shrink-0 mt-0.5" />

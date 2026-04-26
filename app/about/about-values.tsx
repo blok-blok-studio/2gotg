@@ -6,13 +6,13 @@ import { Heart, Shield, Sparkles, Users } from "lucide-react";
 const values = [
   {
     icon: Heart,
-    title: "Passion-Driven",
-    description: "Every team member is a passionate traveler. We recommend places we've been, restaurants we've eaten at, and experiences we've lived.",
+    title: "Passion Driven",
+    description: "We recommend places we have been, restaurants we have eaten at, and experiences we have actually lived. Travel is not just what we do. It is who we are.",
   },
   {
     icon: Sparkles,
     title: "Bespoke First",
-    description: "No templates, no cookie-cutters. Every itinerary is designed from scratch to match your unique preferences, pace, and budget.",
+    description: "We design from scratch to match your unique preferences, pace, and budget. Every itinerary is built around you, not a template.",
   },
   {
     icon: Shield,
@@ -22,7 +22,7 @@ const values = [
   {
     icon: Users,
     title: "Community Impact",
-    description: "We partner with local businesses, support sustainable tourism, and ensure our travels leave a positive impact on every community we visit.",
+    description: "Our goal is to work with local businesses and ensure our travels leave a positive impact on the community we visit.",
   },
 ];
 

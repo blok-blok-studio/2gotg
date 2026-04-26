@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import { Globe, Award, Heart, MapPin } from "lucide-react";
 
 const credentials = [
-  { icon: Globe, label: "IATA Accredited Agent" },
-  { icon: Award, label: "ITB Berlin Speaker 2026" },
+  { icon: Globe, label: "Certified Fora Advisor" },
+  { icon: Award, label: "Travel for a Purpose: Volunteer Experiences" },
   { icon: Heart, label: "Passionate Traveler" },
-  { icon: MapPin, label: "30+ Countries Visited" },
+  { icon: MapPin, label: "Solo & Group Travel" },
 ];
 
 export function AboutTeam() {
@@ -56,7 +56,7 @@ export function AboutTeam() {
                 </div>
                 {/* Decorative badge */}
                 <div className="absolute -bottom-4 -right-4 bg-cta text-white px-4 py-2 rounded-xl text-sm font-semibold shadow-lg shadow-cta/25">
-                  14+ Years in Travel
+                  40+ Years in Travel
                 </div>
               </div>
             </div>
@@ -66,24 +66,24 @@ export function AboutTeam() {
               <h3 className="font-[var(--font-heading)] text-2xl lg:text-3xl font-bold text-foreground mb-1">
                 Heidie Haynes
               </h3>
-              <p className="text-primary font-medium mb-6">Founder & Lead Travel Architect</p>
+              <p className="text-primary font-medium mb-6">Founder &amp; Lead Travel Architect</p>
 
               <div className="space-y-4 text-muted leading-relaxed">
                 <p>
-                  With over a decade of experience in the travel industry, Heidie founded 2GoTG Travel
-                  with a mission to create deeply personal, transformative travel experiences. She
-                  believes that travel should never be one-size-fits-all — every trip should reflect
-                  the unique interests, pace, and dreams of the traveler.
+                  Heidie has been exploring the world since she was a little girl. Her first
+                  international trip came in 1970, and that sense of wonder never left her.
+                  By 1980 she was taking her first solo trip through Europe, and by 1990
+                  she had spent years living abroad in Southeast Asia.
                 </p>
                 <p>
-                  From the cobblestone streets of Sicily to the neon-lit Broadway of Nashville,
-                  Heidie has personally explored the destinations she recommends. Her first-hand
-                  knowledge, industry connections, and genuine passion for travel mean every
-                  itinerary comes with insider access you won&apos;t find anywhere else.
+                  When she became a mother, travel became something she shared. Starting in
+                  2000, she brought her children along and showed them firsthand what it
+                  looks like to move through the world with curiosity and openness.
                 </p>
                 <p>
-                  As an IATA-accredited agent and featured speaker at ITB Berlin 2026, Heidie
-                  brings both professional expertise and an adventurer&apos;s heart to every client relationship.
+                  In 2024, she turned more than 40 years of firsthand experience into
+                  2 Girls on the Go. Every destination she books is somewhere she has
+                  actually been. Every recommendation comes from a trip she has lived.
                 </p>
               </div>
 
