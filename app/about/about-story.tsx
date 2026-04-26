@@ -1,45 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Plane, Globe, Home, Heart, Sparkles, MapPin, Zap } from "lucide-react";
+import { Calendar, Plane, Globe, Users, Briefcase, Heart, MapPin, Zap } from "lucide-react";
 
 const milestones = [
-  {
-    year: "1970",
-    title: "First Trip Abroad",
-    description: "Her first international trip with family sparked a lifelong love for discovering the world.",
-    icon: Plane,
-  },
-  {
-    year: "1980",
-    title: "First Solo Trip to Europe",
-    description: "A solo summer adventure through Europe set the tone for decades of independent travel.",
-    icon: Globe,
-  },
-  {
-    year: "1990",
-    title: "Living Abroad",
-    description: "Returned from years spent living in Southeast Asia, deepening her appreciation for culture and community.",
-    icon: Home,
-  },
-  {
-    year: "2000",
-    title: "Sharing the Journey",
-    description: "Started introducing her children to travel, both at home and abroad.",
-    icon: Heart,
-  },
-  {
-    year: "2024",
-    title: "2 Girls on the Go",
-    description: "Turned 40 plus years of firsthand travel experience into a business built on genuine care and personal service.",
-    icon: Sparkles,
-  },
+  { year: "1970", title: "First Trip Abroad", description: "First international trip with family.", icon: Plane },
+  { year: "1980", title: "First Solo Summer in Europe", description: "Heidie's lifelong love of independent travel begins.", icon: Calendar },
+  { year: "1990", title: "Home from Southeast Asia", description: "Returned from living abroad in Southeast Asia.", icon: Globe },
+  { year: "2000", title: "Travel With the Kids", description: "Introduced her children to traveling at home and abroad.", icon: Users },
+  { year: "2024", title: "2 Girls on the Go", description: "Turned a lifelong passion for travel into a business.", icon: Briefcase },
 ];
 
 const funFacts = [
-  { icon: MapPin, label: "Favorite Place", value: "The beautiful beaches of Italy" },
-  { icon: Globe, label: "Most Exotic", value: "India" },
-  { icon: Zap, label: "Craziest Adventure", value: "White water rafting in Nepal" },
+  { label: "Favorite Place", value: "The beautiful beaches of Italy", icon: Heart },
+  { label: "Most Exotic Place", value: "India", icon: MapPin },
+  { label: "Craziest Adventure", value: "White-water rafting in Nepal", icon: Zap },
 ];
 
 export function AboutStory() {
@@ -51,28 +26,29 @@ export function AboutStory() {
           <motion.div
           >
             <p className="text-sm font-semibold text-cta uppercase tracking-widest mb-3">
-              Her Story
+              Travel is a Mindset
             </p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-6">
-              A Life Built Around<br />
-              <span className="text-primary">Travel</span>
+              Built on 40+ Years<br />
+              <span className="text-primary">of Real Travel</span>
             </h2>
             <div className="space-y-4 text-muted leading-relaxed">
               <p>
-                Heidie has been exploring the world since she was a little girl. Her first
-                international trip was in 1970, and that sense of wonder never left her.
-                She spent summers in Europe, years living abroad in Southeast Asia, and
-                more destinations than she can count.
+                2 Girls on the Go was born from a simple belief: travel should be
+                transformative, not transactional. Heidie has spent more than four
+                decades exploring the world — solo, with family, and with groups —
+                and now she puts that experience to work for her clients.
               </p>
               <p>
-                By 2000 she was bringing her children along, showing them firsthand what
-                it looks like to move through the world with curiosity and openness.
-                Travel was never a luxury in her home. It was just what life looked like.
+                Every itinerary is crafted by hand. Every recommendation comes from
+                first-hand experience. Every traveler is treated like family. There are
+                no cookie-cutter packages here — only journeys built around the people
+                taking them.
               </p>
               <p>
-                In 2024 she turned all of that experience into 2 Girls on the Go. Every
-                place she recommends is somewhere she has been. Every trip she plans comes
-                from over 40 years of seeing the world for herself.
+                Whether it&apos;s a weekend escape close to home or a month abroad on
+                another continent, Heidie believes travel should be accessible to
+                everyone, no matter the budget.
               </p>
             </div>
 

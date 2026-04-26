@@ -1,12 +1,12 @@
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import {
+  MapPin,
   Phone,
   Mail,
   Globe,
   Shield,
   CreditCard,
-  Link2,
 } from "lucide-react";
 import { siteConfig } from "@/config/site";
 
@@ -28,14 +28,20 @@ function FacebookIcon({ className }: { className?: string }) {
   );
 }
 
+function LinktreeIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 4v16M4 12h16M7 7l10 10M17 7L7 17" />
+    </svg>
+  );
+}
+
 const footerLinks = {
-  destinations: [
-    { label: "Sicily, Italy", href: "/destinations" },
-    { label: "Macedonia", href: "/destinations" },
-    { label: "Napa Valley", href: "/destinations" },
-    { label: "Savannah", href: "/destinations" },
-    { label: "Gulf Shores", href: "/destinations" },
-    { label: "Washington, D.C.", href: "/destinations" },
+  tours: [
+    { label: "Sicily Summer", href: "/tours/sicily-summer" },
+    { label: "Sicilian Discovery", href: "/tours/sicilian-discovery" },
+    { label: "Macedonia Tour", href: "/tours/macedonia-tour" },
+    { label: "Berlin Adventure", href: "/tours/berlin-adventure" },
   ],
   experiences: [
     { label: "Luxury Getaways", href: "/experiences#luxury" },
@@ -43,14 +49,12 @@ const footerLinks = {
     { label: "Cultural Immersion", href: "/experiences#cultural" },
     { label: "Honeymoon Packages", href: "/experiences#honeymoon" },
     { label: "Group Tours", href: "/experiences#group" },
-    { label: "Volunteer Travel", href: "/experiences#volunteer" },
+    { label: "Corporate Retreats", href: "/experiences#corporate" },
   ],
   company: [
-    { label: "About Us", href: "/about" },
-    { label: "Our Team", href: "/about#team" },
-    { label: "Testimonials", href: "/about#testimonials" },
-    { label: "Careers", href: "/careers" },
-    { label: "Press", href: "/press" },
+    { label: "About Heidie", href: "/about" },
+    { label: "Reviews", href: "/about#testimonials" },
+    { label: "Plan a Trip", href: "/plan" },
     { label: "Contact", href: "/contact" },
   ],
 };
@@ -58,7 +62,7 @@ const footerLinks = {
 const socialLinks = [
   { icon: InstagramIcon, href: siteConfig.social.instagram, label: "Instagram" },
   { icon: FacebookIcon, href: siteConfig.social.facebook, label: "Facebook" },
-  { icon: Link2, href: siteConfig.social.linktree, label: "Linktree" },
+  { icon: LinktreeIcon, href: siteConfig.social.linktree, label: "Linktree" },
 ];
 
 export function Footer() {
@@ -70,28 +74,35 @@ export function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-flex items-center gap-2.5 group">
-              <Image
-                src="/brand/2-girls-on-the-go-travel-logo-v2.svg"
-                alt="2 Girls on the Go"
-                width={48}
-                height={48}
-                className="h-11 w-11 transition-transform duration-200 group-hover:scale-105"
-              />
+              <div className="h-12 w-12 rounded-lg bg-white/95 flex items-center justify-center transition-transform duration-200 group-hover:scale-105 p-1.5">
+                <Image
+                  src="/brand/2-girls-on-the-go-travel-logo-v2.png"
+                  alt="2 Girls on the Go travel agency logo"
+                  width={48}
+                  height={48}
+                  className="object-contain"
+                />
+              </div>
               <div className="flex flex-col leading-none">
-                <span className="font-[var(--font-heading)] font-bold text-xl text-white tracking-tight">
-                  2GoTG
+                <span className="font-[var(--font-heading)] font-bold text-lg text-white tracking-tight">
+                  2 Girls on the Go
                 </span>
-                <span className="text-[10px] uppercase tracking-[0.2em] text-white/50 font-medium">
-                  Travel
+                <span className="text-[10px] uppercase tracking-[0.18em] text-white/50 font-medium">
+                  Travel is a Mindset
                 </span>
               </div>
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/60">
-              Crafting extraordinary travel experiences built on 40 plus years of
-              firsthand exploration. From pristine beaches to mountain peaks, we turn
-              your dream destinations into reality.
+              A boutique travel agency owned by Heidie Haynes. Custom international and
+              domestic itineraries built on more than 40 years of personal travel
+              experience. We make travel accessible — whether it&apos;s a weekend close
+              to home or an exotic month abroad.
             </p>
             <div className="mt-6 space-y-3 text-sm">
+              <div className="flex items-center gap-2 text-white/60">
+                <MapPin className="h-4 w-4 text-primary shrink-0" />
+                {siteConfig.contact.address}
+              </div>
               <div className="flex items-center gap-2 text-white/60">
                 <Phone className="h-4 w-4 text-primary shrink-0" />
                 {siteConfig.contact.phone}
@@ -103,13 +114,13 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Destinations */}
+          {/* Tours */}
           <div>
             <h3 className="font-[var(--font-heading)] font-semibold text-white mb-4">
-              Destinations
+              Tours
             </h3>
             <ul className="space-y-2.5">
-              {footerLinks.destinations.map((link) => (
+              {footerLinks.tours.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
@@ -165,11 +176,11 @@ export function Footer() {
         <div className="mt-12 pt-8 border-t border-white/10 grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs text-white/40">
           <div className="flex items-center gap-2">
             <Shield className="h-4 w-4" />
-            <span>Certified Fora Advisor</span>
+            <span>ASTA Verified</span>
           </div>
           <div className="flex items-center gap-2">
             <Globe className="h-4 w-4" />
-            <span>International and Domestic Travel</span>
+            <span>IATA Accredited</span>
           </div>
           <div className="flex items-center gap-2">
             <CreditCard className="h-4 w-4" />

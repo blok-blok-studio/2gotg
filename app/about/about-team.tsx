@@ -1,13 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Globe, Award, Heart, MapPin } from "lucide-react";
 
 const credentials = [
-  { icon: Globe, label: "Certified Fora Advisor" },
-  { icon: Award, label: "Travel for a Purpose: Volunteer Experiences" },
-  { icon: Heart, label: "Passionate Traveler" },
-  { icon: MapPin, label: "Solo & Group Travel" },
+  { icon: Globe, label: "IATA Accredited Agent" },
+  { icon: Award, label: "ITB Berlin Speaker 2026" },
+  { icon: Heart, label: "40+ Years Traveling" },
+  { icon: MapPin, label: "Solo, Group & Family Trips" },
 ];
 
 export function AboutTeam() {
@@ -16,11 +17,18 @@ export function AboutTeam() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             className="text-sm font-semibold text-cta uppercase tracking-widest mb-3"
           >
             Meet the Founder
           </motion.p>
           <motion.h2
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight"
           >
             Your Travel <span className="text-primary">Architect</span>
@@ -28,24 +36,29 @@ export function AboutTeam() {
         </div>
 
         <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
           className="max-w-4xl mx-auto"
         >
           <div className="grid md:grid-cols-5 gap-10 lg:gap-16 items-center">
             {/* Photo */}
             <div className="md:col-span-2 flex justify-center">
               <div className="relative">
-                <div className="w-64 h-80 md:w-full md:h-auto md:aspect-[3/4] rounded-2xl bg-gradient-to-br from-primary/20 to-cta/10 border border-primary/10 flex items-center justify-center overflow-hidden">
-                  {/* Placeholder — replace with next/image once photo is in public/images/team/ */}
-                  <div className="text-center p-8">
-                    <div className="h-24 w-24 rounded-full bg-gradient-to-br from-primary to-cta flex items-center justify-center mx-auto mb-4">
-                      <span className="text-white font-bold text-3xl font-[var(--font-heading)]">HH</span>
-                    </div>
-                    <p className="text-sm text-muted">Photo: place heidie-haynes-2gotg-travel-founder.jpg in public/images/team/</p>
-                  </div>
+                <div className="w-64 md:w-full md:h-auto aspect-[3/4] rounded-2xl border border-primary/10 overflow-hidden shadow-xl shadow-primary/10">
+                  <Image
+                    src="/brand/heidie-haynes-2-girls-on-the-go-founder.jpg"
+                    alt="Heidie Haynes — founder of 2 Girls on the Go travel agency"
+                    width={787}
+                    height={1400}
+                    className="object-cover w-full h-full"
+                    priority
+                  />
                 </div>
                 {/* Decorative badge */}
                 <div className="absolute -bottom-4 -right-4 bg-cta text-white px-4 py-2 rounded-xl text-sm font-semibold shadow-lg shadow-cta/25">
-                  40+ Years in Travel
+                  40+ Years Traveling
                 </div>
               </div>
             </div>
@@ -55,24 +68,22 @@ export function AboutTeam() {
               <h3 className="font-[var(--font-heading)] text-2xl lg:text-3xl font-bold text-foreground mb-1">
                 Heidie Haynes
               </h3>
-              <p className="text-primary font-medium mb-6">Founder &amp; Lead Travel Architect</p>
+              <p className="text-primary font-medium mb-6">Founder &amp; Owner</p>
 
               <div className="space-y-4 text-muted leading-relaxed">
                 <p>
-                  Heidie has been exploring the world since she was a little girl. Her first
-                  international trip came in 1970, and that sense of wonder never left her.
-                  By 1980 she was taking her first solo trip through Europe, and by 1990
-                  she had spent years living abroad in Southeast Asia.
+                  As an experienced traveler having traveled for more than 40 years —
+                  individually, with groups, and with family — I love what I do, and that is
+                  introducing the world of travel and culture to others.
                 </p>
                 <p>
-                  When she became a mother, travel became something she shared. Starting in
-                  2000, she brought her children along and showed them firsthand what it
-                  looks like to move through the world with curiosity and openness.
+                  Some people wait a lifetime for that one special trip. I believe it is my
+                  privilege to provide moments where others understand that travel is
+                  accessible, whether it is a weekend trip to explore someplace close to home
+                  or a trip to a faraway exotic land.
                 </p>
                 <p>
-                  In 2024, she turned more than 40 years of firsthand experience into
-                  2 Girls on the Go. Every destination she books is somewhere she has
-                  actually been. Every recommendation comes from a trip she has lived.
+                  Travel is a mindset that allows us to explore the world no matter our budget.
                 </p>
               </div>
 

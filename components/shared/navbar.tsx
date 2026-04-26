@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Globe, Phone } from "lucide-react";
@@ -38,19 +38,19 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group">
             <Image
-              src="/brand/2-girls-on-the-go-travel-logo-v2.svg"
-              alt="2 Girls on the Go"
-              width={48}
-              height={48}
+              src="/brand/2-girls-on-the-go-travel-logo-v2.png"
+              alt="2 Girls on the Go travel agency logo"
+              width={144}
+              height={144}
               priority
-              className="h-11 w-11 transition-transform duration-200 group-hover:scale-105"
+              className="h-14 w-14 lg:h-16 lg:w-16 object-contain transition-transform duration-200 group-hover:scale-105"
             />
             <div className="flex flex-col leading-none">
-              <span className="font-[var(--font-heading)] font-bold text-xl text-foreground tracking-tight">
-                2GoTG
+              <span className="font-[var(--font-heading)] font-bold text-base sm:text-lg text-foreground tracking-tight">
+                2 Girls on the Go
               </span>
-              <span className="text-[10px] uppercase tracking-[0.2em] text-muted font-medium">
-                Travel
+              <span className="text-[9px] uppercase tracking-[0.18em] text-muted font-medium">
+                Travel is a Mindset
               </span>
             </div>
           </Link>

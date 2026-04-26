@@ -5,32 +5,32 @@ import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Sarah & James Mitchell",
-    trip: "Bali Honeymoon, 2024",
+    name: "Nancy M.",
+    trip: "Colorado",
     rating: 5,
-    text: "2GoTG turned our honeymoon into an absolute fairy tale. From the private villa in Ubud to the sunset dinner on the beach in Seminyak, every detail was perfect. They even arranged a surprise traditional dance performance. We will never book travel any other way.",
-    avatar: "SM",
+    text: "I've used 2 Girls on the Go for a couple of adventures! Heidie has been very responsive to my initial ideas and is creative in planning memorable experiences. Whether it was a destination trip or a day tour sightseeing, Heidie provided and guided us with a very well planned out and enjoyable trip. I highly recommend using 2 Girls on the Go for your next trip!",
+    avatar: "NM",
   },
   {
-    name: "David Chen",
-    trip: "Japan Cultural Tour, 2024",
+    name: "Sandra B.",
+    trip: "Riviera Maya",
     rating: 5,
-    text: "As a solo traveler, I was nervous about navigating Japan alone. My 2GoTG advisor set me up with local guides who showed me hidden shrines, secret ramen spots, and even got me into a private tea ceremony. Worth every penny.",
-    avatar: "DC",
+    text: "I am writing to share our positive experience with our travel agent during our recent winter getaway. She was incredibly helpful throughout the itinerary and planning process, demonstrating a clear understanding of our preferences and finding us the perfect location while staying within our budget. She also provided valuable guidance on traveling to a foreign country and was readily available by phone to answer questions about our accommodations upon our arrival. Following our return, she even followed up to ensure everything went according to our wishes.",
+    avatar: "SB",
   },
   {
-    name: "The Rodriguez Family",
-    trip: "Grand Canyon Adventure, 2024",
+    name: "Michelle L.",
+    trip: "Houston",
     rating: 5,
-    text: "Traveling with three kids ages 6 through 12 can be chaos. 2GoTG planned an itinerary that kept everyone engaged, from mule rides on the rim to stargazing programs. They even handled the dietary restrictions without us having to ask twice.",
-    avatar: "RF",
+    text: "Heidie was an absolute pleasure to work with! She made the experience of hotel scouring pleasant and easy! So much easier going through her than trying to book on my own! Will definitely be using her for all future bookings!",
+    avatar: "ML",
   },
   {
-    name: "Doug Lowery",
-    trip: "India, 2024",
+    name: "Carey H.",
+    trip: "Germany",
     rating: 5,
-    text: "It was a great experience working with your travel agency from beginning to end. You found excellent rates for our trip and secured aisle seats for all of us, which made a big difference on the long flights. You were always available to answer any questions we had, making the entire process seamless and stress free. I would highly recommend your services.",
-    avatar: "DL",
+    text: "I was on the road and needed a reputable hotel immediately. The booking was quick and easy. I appreciated the very timely response. Thank you.",
+    avatar: "CH",
   },
 ];
 
@@ -85,22 +85,19 @@ export function Testimonials() {
           ))}
         </div>
 
-        <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 lg:gap-12 text-center">
+        {/* Industry stats */}
+        <div className="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 lg:gap-12 text-center">
           <div>
-            <p className="text-2xl sm:text-3xl font-bold text-foreground">4.9/5</p>
-            <p className="text-xs text-muted mt-1">Google Reviews</p>
+            <p className="text-3xl sm:text-4xl font-bold text-foreground">70%</p>
+            <p className="text-xs text-muted mt-1.5">of solo travelers are women</p>
           </div>
           <div>
-            <p className="text-2xl sm:text-3xl font-bold text-foreground">15,000+</p>
-            <p className="text-xs text-muted mt-1">Happy Travelers</p>
+            <p className="text-3xl sm:text-4xl font-bold text-foreground">$78B+</p>
+            <p className="text-xs text-muted mt-1.5">global medical tourism industry</p>
           </div>
           <div>
-            <p className="text-2xl sm:text-3xl font-bold text-foreground">98%</p>
-            <p className="text-xs text-muted mt-1">Rebooking Rate</p>
-          </div>
-          <div>
-            <p className="text-2xl sm:text-3xl font-bold text-foreground">40+ Years</p>
-            <p className="text-xs text-muted mt-1">of Travel Experience</p>
+            <p className="text-3xl sm:text-4xl font-bold text-foreground">60%+</p>
+            <p className="text-xs text-muted mt-1.5">of travelers plan to use a travel advisor</p>
           </div>
         </div>
       </div>
