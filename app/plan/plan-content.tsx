@@ -428,7 +428,7 @@ export function PlanContent() {
                       padding:2rem;
                     ">
                       <div>
-                        <svg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24' fill='none' stroke='#0EA5E9' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' style='margin:0 auto 1rem;display:block;'><rect x='3' y='4' width='18' height='18' rx='2' ry='2'/><line x1='16' y1='2' x2='16' y2='6'/><line x1='8' y1='2' x2='8' y2='6'/><line x1='3' y1='10' x2='21' y2='10'/></svg>
+                        <svg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24' fill='none' stroke='#3FA9DD' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' style='margin:0 auto 1rem;display:block;'><rect x='3' y='4' width='18' height='18' rx='2' ry='2'/><line x1='16' y1='2' x2='16' y2='6'/><line x1='8' y1='2' x2='8' y2='6'/><line x1='3' y1='10' x2='21' y2='10'/></svg>
                         <p style="font-size:1.125rem;font-weight:600;color:#0C4A6E;margin-bottom:0.5rem;">Google Calendar Booking Widget</p>
                         <p style="font-size:0.875rem;">Replace this iframe src with your Google Calendar appointment scheduling URL.</p>
                       </div>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   Phone,
@@ -68,12 +69,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
           {/* Brand column */}
           <div className="lg:col-span-2">
-            <Link href="/" className="inline-flex items-center gap-2 group">
-              <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-primary to-cta flex items-center justify-center transition-transform duration-200 group-hover:scale-105">
-                <span className="text-white font-[var(--font-heading)] font-bold text-lg">
-                  2G
-                </span>
-              </div>
+            <Link href="/" className="inline-flex items-center gap-2.5 group">
+              <Image
+                src="/brand/2-girls-on-the-go-travel-logo-v2.svg"
+                alt="2 Girls on the Go"
+                width={48}
+                height={48}
+                className="h-11 w-11 transition-transform duration-200 group-hover:scale-105"
+              />
               <div className="flex flex-col leading-none">
                 <span className="font-[var(--font-heading)] font-bold text-xl text-white tracking-tight">
                   2GoTG

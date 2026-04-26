@@ -44,8 +44,8 @@ export function Globe({ className = "", size = 600 }: GlobeProps) {
       mapSamples: 16000,
       mapBrightness: 6,
       baseColor: [0.89, 0.96, 1], // Light sky blue tint
-      markerColor: [0.976, 0.451, 0.086], // CTA orange #F97316
-      glowColor: [0.055, 0.647, 0.914], // Primary blue #0EA5E9
+      markerColor: [0.941, 0.2, 0.224], // Logo red #F03339
+      glowColor: [0.247, 0.663, 0.867], // Logo blue #3FA9DD
       markers: [
         // Europe destinations
         { location: [37.5079, 15.0830], size: 0.08 }, // Sicily

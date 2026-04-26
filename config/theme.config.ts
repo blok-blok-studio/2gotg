@@ -2,7 +2,7 @@
  * Theme Configuration — 2GoTG Travel
  * Generated from UUPM Design System: Gradient Mesh / Aurora Evolved
  * Typography: Bodoni Moda + Jost (luxury, sophisticated, refined)
- * Palette: Sky blue + adventure orange
+ * Palette: Brand red + sky blue (matches 2 Girls on the Go logo)
  */
 
 export const theme = {
@@ -13,11 +13,11 @@ export const theme = {
       "https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Jost:wght@300;400;500;600;700&display=swap",
   },
   colors: {
-    primary: "#0EA5E9",       // Sky blue — trust, wanderlust, open skies
-    primaryLight: "#38BDF8",  // Lighter sky
-    primaryDark: "#0369A1",   // Deep ocean
-    cta: "#F97316",           // Adventure orange — urgency, warmth, action
-    ctaHover: "#EA580C",      // Darker orange on hover
+    primary: "#3FA9DD",       // Logo sky blue — trust, wanderlust, open skies
+    primaryLight: "#67BFE5",  // Lighter sky
+    primaryDark: "#1F6A9E",   // Deep ocean
+    cta: "#F03339",           // Logo red — urgency, warmth, action
+    ctaHover: "#C71F25",      // Darker red on hover
     background: "#F0F9FF",    // Whisper blue
     backgroundDark: "#0B1120",// Deep night
     surface: "#FFFFFF",       // Card surfaces

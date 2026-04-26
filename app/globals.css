@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  /* Colors — Sky blue + Adventure orange */
-  --color-primary: #0EA5E9;
-  --color-primary-light: #38BDF8;
-  --color-primary-dark: #0369A1;
-  --color-cta: #F97316;
-  --color-cta-hover: #EA580C;
+  /* Colors — Brand red + sky blue (matches 2 Girls on the Go logo) */
+  --color-primary: #3FA9DD;
+  --color-primary-light: #67BFE5;
+  --color-primary-dark: #1F6A9E;
+  --color-cta: #F03339;
+  --color-cta-hover: #C71F25;
   --color-background: #F0F9FF;
   --color-background-dark: #0B1120;
   --color-surface: #FFFFFF;
