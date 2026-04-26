@@ -15,6 +15,9 @@ node_modules/
 .next/
 .vercel/
 
+# TypeScript build cache
+*.tsbuildinfo
+
 # Environment
 .env
 .env.local
