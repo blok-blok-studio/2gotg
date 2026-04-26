@@ -3,7 +3,7 @@ export const siteConfig = {
   tagline: "Your Gateway to the World",
   description:
     "International and domestic travel experiences. Curated itineraries, expert guides, and unforgettable adventures across every continent.",
-  url: "https://2gotg.com",
+  url: "https://2girlsonthego.com",
   contact: {
     email: "heidi@2gogtravel.com",
     phone: "(817) 650-8455",

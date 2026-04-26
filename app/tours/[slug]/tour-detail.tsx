@@ -309,7 +309,7 @@ export function TourDetail({ tour }: { tour: TourData }) {
                     Share This Tour
                   </h3>
                   <ShareLinks
-                    url={`https://2gotg.com/tours/${tour.slug}`}
+                    url={`https://2girlsonthego.com/tours/${tour.slug}`}
                     title={`${tour.name} — 2GoTG Travel`}
                   />
                 </motion.div>

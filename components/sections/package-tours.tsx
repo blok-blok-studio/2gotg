@@ -242,7 +242,7 @@ export function PackageTours() {
                     {!tour.comingSoon && (
                       <div className="shrink-0 ml-3">
                         <ShareLinks
-                          url={`https://2gotg.com/tours/${tour.slug}`}
+                          url={`https://2girlsonthego.com/tours/${tour.slug}`}
                           title={`${tour.name} — 2GoTG Travel`}
                           variant="compact"
                         />
