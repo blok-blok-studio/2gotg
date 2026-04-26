@@ -1,10 +1,24 @@
+import dynamic from "next/dynamic";
 import { Hero } from "@/components/sections/hero";
-import { Features } from "@/components/sections/features";
-import { DestinationsPreview } from "@/components/sections/destinations-preview";
-import { PackageTours } from "@/components/sections/package-tours";
-import { Experiences } from "@/components/sections/experiences";
-import { Testimonials } from "@/components/sections/testimonials";
-import { CTA } from "@/components/sections/cta";
+
+const Features = dynamic(() =>
+  import("@/components/sections/features").then((m) => ({ default: m.Features })),
+);
+const DestinationsPreview = dynamic(() =>
+  import("@/components/sections/destinations-preview").then((m) => ({ default: m.DestinationsPreview })),
+);
+const PackageTours = dynamic(() =>
+  import("@/components/sections/package-tours").then((m) => ({ default: m.PackageTours })),
+);
+const Experiences = dynamic(() =>
+  import("@/components/sections/experiences").then((m) => ({ default: m.Experiences })),
+);
+const Testimonials = dynamic(() =>
+  import("@/components/sections/testimonials").then((m) => ({ default: m.Testimonials })),
+);
+const CTA = dynamic(() =>
+  import("@/components/sections/cta").then((m) => ({ default: m.CTA })),
+);
 
 export default function Home() {
   return (

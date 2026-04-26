@@ -143,12 +143,30 @@ nav.border-b {
   border-top-color: rgba(226, 232, 240, 0.3);
 }
 
-/* Noise texture overlay */
-.noise-overlay::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 1;
+/* Noise texture overlay — desktop only; the SVG turbulence filter is
+   expensive to repaint on mobile GPUs and contributes to scroll jank. */
+@media (min-width: 1024px) and (hover: hover) {
+  .noise-overlay::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+  }
+}
+
+/* Simplify gradient mesh on mobile — three radial gradients composited
+   per scroll repaint is expensive. Use one cheaper gradient instead. */
+@media (max-width: 768px) {
+  .gradient-mesh {
+    background:
+      radial-gradient(at 30% 20%, rgba(63, 169, 221, 0.12) 0%, transparent 60%),
+      var(--color-background);
+  }
+  .gradient-mesh-dark {
+    background:
+      radial-gradient(at 30% 20%, rgba(63, 169, 221, 0.1) 0%, transparent 60%),
+      var(--color-background-dark);
+  }
 }

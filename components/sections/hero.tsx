@@ -14,24 +14,10 @@ const stats = [
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden gradient-mesh noise-overlay">
-      {/* Floating orbs */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          animate={{
-            x: [0, 30, 0],
-            y: [0, -20, 0],
-          }}
-          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-20 right-[15%] w-72 h-72 bg-primary/10 rounded-full blur-3xl"
-        />
-        <motion.div
-          animate={{
-            x: [0, -20, 0],
-            y: [0, 30, 0],
-          }}
-          transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-20 left-[10%] w-96 h-96 bg-cta/8 rounded-full blur-3xl"
-        />
+      {/* Static blurred orbs — no animation to avoid 60fps blur repaints */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden>
+        <div className="absolute top-20 right-[15%] w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-[10%] w-96 h-96 bg-cta/8 rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8 lg:px-6 pt-32 pb-20 lg:pt-40 lg:pb-28">
@@ -132,6 +118,8 @@ export function Hero() {
                     src="https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=600&q=80"
                     alt="Santorini Greece — white-washed buildings and blue domes overlooking the Aegean Sea"
                     fill
+                    priority
+                    fetchPriority="high"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                     sizes="(max-width: 1024px) 0vw, 25vw"
                   />
