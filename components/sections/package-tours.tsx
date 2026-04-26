@@ -23,6 +23,8 @@ type FeaturedTour = {
   pricingNote?: string;
   image: string;
   imageAlt: string;
+  galleryImage?: string;
+  galleryImageAlt?: string;
   highlights: string[];
   includes: string[];
   excludes: string;
@@ -75,6 +77,8 @@ const featuredTours: FeaturedTour[] = [
     priceNote: "plus booking fee",
     image: "/images/destinations/mavrovo-lake-submerged-church-north-macedonia-travel-tour.jpg",
     imageAlt: "Submerged church at Mavrovo Lake in North Macedonia surrounded by autumn foliage, featured on the 2 Girls on the Go Macedonia cultural escape tour",
+    galleryImage: "/images/destinations/lake-ohrid-north-macedonia-crystal-water-aerial-tour.jpg",
+    galleryImageAlt: "Aerial view of Lake Ohrid in North Macedonia showing stunning turquoise and deep blue crystal clear water with white pebble beach and forested hills",
     highlights: [
       "Matka Canyon",
       "Vodno Mountain",
@@ -92,6 +96,35 @@ const featuredTours: FeaturedTour[] = [
       "All tickets for museums, boat rides, monasteries, and more",
     ],
     excludes: "Flights, travel insurance, and alcoholic drinks not included",
+  },
+  {
+    category: "Explore the World",
+    badge: "Coming Soon",
+    badgeUrgent: false,
+    comingSoon: true,
+    slug: "berlin-germany",
+    name: "Berlin, Germany",
+    date: "Dates to be announced",
+    deadline: null,
+    deposit: null,
+    duration: "5 to 7 Days",
+    price: "Inquire for pricing",
+    priceNote: "",
+    image: "/images/destinations/berlin-brandenburg-gate-germany-travel-tour.jpg",
+    imageAlt: "Brandenburg Gate in Berlin Germany at golden hour, featured destination on the 2 Girls on the Go Europe travel tour",
+    highlights: [
+      "Brandenburg Gate and the Berlin Wall Memorial",
+      "Museum Island and world class art collections",
+      "Checkpoint Charlie and Cold War history",
+      "Vibrant street food, markets, and nightlife",
+      "Optional day trip to Potsdam and Sanssouci Palace",
+    ],
+    includes: [
+      "Curated local experiences and guided tours",
+      "Hotel accommodations in central Berlin",
+      "Transportation within the city",
+    ],
+    excludes: "Flights and travel insurance not included",
   },
   {
     category: "Explore the World",
@@ -196,35 +229,75 @@ export function PackageTours() {
             >
               <div className="grid md:grid-cols-5">
                 {/* Image */}
-                <div className="md:col-span-2 relative aspect-[4/3] md:aspect-auto overflow-hidden">
-                  <Image
-                    src={tour.image}
-                    alt={tour.imageAlt}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, 40vw"
-                    quality={85}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                  <div className="absolute top-4 left-4 flex flex-col gap-2">
-                    <span
-                      className={`inline-flex items-center text-xs font-bold px-3 py-1.5 rounded-full ${
-                        tour.badgeUrgent
-                          ? "bg-red-500 text-white"
-                          : tour.comingSoon
-                          ? "bg-white/90 text-foreground"
-                          : "bg-cta text-white"
-                      }`}
-                    >
-                      {tour.badge}
-                    </span>
-                  </div>
-                  <div className="absolute bottom-4 left-4">
-                    <span className="inline-flex items-center gap-1.5 bg-white/90 backdrop-blur-sm text-xs font-semibold px-3 py-1.5 rounded-full text-foreground">
-                      <MapPin className="h-3 w-3 text-primary" />
-                      {tour.name}
-                    </span>
-                  </div>
+                <div className={`md:col-span-2 relative overflow-hidden flex flex-col ${tour.galleryImage ? "" : "aspect-[4/3] md:aspect-auto"}`}>
+                  {tour.galleryImage ? (
+                    <>
+                      <div className="relative flex-1 min-h-0" style={{ flexBasis: "60%" }}>
+                        <Image
+                          src={tour.image}
+                          alt={tour.imageAlt}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          sizes="(max-width: 768px) 100vw, 40vw"
+                          quality={85}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                      </div>
+                      <div className="relative" style={{ flexBasis: "40%", minHeight: "140px" }}>
+                        <Image
+                          src={tour.galleryImage}
+                          alt={tour.galleryImageAlt ?? ""}
+                          fill
+                          className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                          sizes="(max-width: 768px) 100vw, 40vw"
+                          quality={85}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                      </div>
+                      <div className="absolute top-4 left-4">
+                        <span className="inline-flex items-center text-xs font-bold px-3 py-1.5 rounded-full bg-cta text-white">
+                          {tour.badge}
+                        </span>
+                      </div>
+                      <div className="absolute bottom-4 left-4">
+                        <span className="inline-flex items-center gap-1.5 bg-white/90 backdrop-blur-sm text-xs font-semibold px-3 py-1.5 rounded-full text-foreground">
+                          <MapPin className="h-3 w-3 text-primary" />
+                          {tour.name}
+                        </span>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <Image
+                        src={tour.image}
+                        alt={tour.imageAlt}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, 40vw"
+                        quality={85}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                      <div className="absolute top-4 left-4 flex flex-col gap-2">
+                        <span
+                          className={`inline-flex items-center text-xs font-bold px-3 py-1.5 rounded-full ${
+                            tour.badgeUrgent
+                              ? "bg-red-500 text-white"
+                              : tour.comingSoon
+                              ? "bg-white/90 text-foreground"
+                              : "bg-cta text-white"
+                          }`}
+                        >
+                          {tour.badge}
+                        </span>
+                      </div>
+                      <div className="absolute bottom-4 left-4">
+                        <span className="inline-flex items-center gap-1.5 bg-white/90 backdrop-blur-sm text-xs font-semibold px-3 py-1.5 rounded-full text-foreground">
+                          <MapPin className="h-3 w-3 text-primary" />
+                          {tour.name}
+                        </span>
+                      </div>
+                    </>
+                  )}
                 </div>
 
                 {/* Content */}
