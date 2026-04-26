@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
 
 const testimonials = [
@@ -35,29 +35,19 @@ const testimonials = [
 ];
 
 export function Testimonials() {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
     <section className="py-24 lg:py-32" style={{ background: "linear-gradient(to bottom, #F0F9FF, white 15%, white 85%, #F0F9FF)" }}>
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-6">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-sm font-semibold text-cta uppercase tracking-widest mb-3"
-          >
+          <p className="text-sm font-semibold text-cta uppercase tracking-widest mb-3">
             Traveler Stories
-          </motion.p>
-          <motion.h2
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight"
-          >
+          </p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
             Traveler Stories <span className="text-primary">&amp; Reviews</span>
-          </motion.h2>
+          </h2>
         </div>
 
         {/* Grid */}
@@ -65,11 +55,28 @@ export function Testimonials() {
           {testimonials.map((t, i) => (
             <motion.div
               key={t.name}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="relative p-8 rounded-2xl border border-border bg-background hover:border-primary/20 transition-all duration-300"
+              initial={prefersReducedMotion ? false : { y: 50, scale: 0.94 }}
+              whileInView={{ y: 0, scale: 1 }}
+              viewport={{ once: true, amount: 0.15, margin: "0px 0px 200px 0px" }}
+              whileHover={
+                prefersReducedMotion
+                  ? undefined
+                  : {
+                      y: -10,
+                      scale: 1.025,
+                      rotate: i % 2 === 0 ? 0.6 : -0.6,
+                      transition: { type: "spring", stiffness: 320, damping: 14 },
+                    }
+              }
+              transition={{
+                type: "spring",
+                stiffness: 110,
+                damping: 11,
+                mass: 0.9,
+                delay: i * 0.08,
+              }}
+              style={{ willChange: "transform" }}
+              className="relative p-8 rounded-2xl border border-border bg-background hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-[border-color,box-shadow] duration-300"
             >
               <Quote className="absolute top-6 right-6 h-8 w-8 text-primary/10" />
               <div className="flex items-center gap-4 mb-5">
@@ -92,13 +99,7 @@ export function Testimonials() {
         </div>
 
         {/* Social proof bar */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 lg:gap-12 text-center"
-        >
+        <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 lg:gap-12 text-center">
           <div>
             <p className="text-2xl sm:text-3xl font-bold text-foreground">4.9/5</p>
             <p className="text-xs text-muted mt-1">Google Reviews</p>
@@ -115,7 +116,7 @@ export function Testimonials() {
             <p className="text-2xl sm:text-3xl font-bold text-foreground">40+ Years</p>
             <p className="text-xs text-muted mt-1">of Travel Experience</p>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
