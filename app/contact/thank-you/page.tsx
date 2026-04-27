@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CheckCircle2, Mail, Phone, ArrowRight, Calendar } from "lucide-react";
+import { CheckCircle2, Mail, Phone, ArrowRight, Calendar, CalendarClock } from "lucide-react";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
@@ -90,14 +90,25 @@ export default function ThankYouPage() {
             </a>
           </div>
 
-          {/* Primary action */}
-          <Link
-            href="/"
-            className="inline-flex items-center justify-center gap-2 bg-cta hover:bg-cta-hover text-white px-8 py-4 rounded-xl text-base font-semibold transition-all duration-200 hover:shadow-xl hover:shadow-cta/25 cursor-pointer"
-          >
-            Browse More Tours
-            <ArrowRight className="h-4 w-4" />
-          </Link>
+          {/* Primary actions */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a
+              href={siteConfig.discoveryCall}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-cta hover:bg-cta-hover text-white px-8 py-4 rounded-xl text-base font-semibold transition-all duration-200 hover:shadow-xl hover:shadow-cta/25 cursor-pointer"
+            >
+              <CalendarClock className="h-4 w-4" />
+              Book a Discovery Call
+            </a>
+            <Link
+              href="/"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white border border-border text-foreground hover:border-primary/30 hover:bg-primary/5 px-8 py-4 rounded-xl text-base font-medium transition-all duration-200 cursor-pointer"
+            >
+              Browse More Tours
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
 
         {/* Helper for the Bella Sicilia deadline */}

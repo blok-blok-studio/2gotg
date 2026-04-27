@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight, CalendarClock } from "lucide-react";
 import { siteConfig } from "@/config/site";
 
 export function CTA() {
@@ -47,11 +47,13 @@ export function CTA() {
             <ArrowRight className="h-4 w-4" />
           </Link>
           <a
-            href={`tel:${siteConfig.contact.phone.replace(/\D/g, "")}`}
+            href={siteConfig.discoveryCall}
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 text-white px-8 py-4 rounded-xl text-base font-medium border border-white/10 transition-all duration-200"
           >
-            <Phone className="h-4 w-4" />
-            Call Us Now
+            <CalendarClock className="h-4 w-4" />
+            Book a Discovery Call
           </a>
         </motion.div>
       </div>

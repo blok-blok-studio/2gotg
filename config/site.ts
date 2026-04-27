@@ -14,6 +14,7 @@ export const siteConfig = {
     facebook: "https://www.facebook.com/profile.php?id=61571383679372",
     linktree: "https://linktr.ee/haynes.heidi4",
   },
+  discoveryCall: "https://cal.com/heidie-haynes/discovery-call",
   nav: [
     { label: "Tours", href: "/#package-tours" },
     { label: "Experiences", href: "/experiences" },
