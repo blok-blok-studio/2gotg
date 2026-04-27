@@ -166,7 +166,7 @@ const tourGroups: TourGroup[] = [
         continent: "North America",
         destination: "Calgary, Alberta",
         image:
-          "https://images.unsplash.com/photo-1517935706615-2717063c2225?w=2000&q=90&auto=format&fit=crop",
+          "/images/destinations/canada-rocky-mountains-travel-tour.jpg",
         inquireOnly: true,
       },
     ],
