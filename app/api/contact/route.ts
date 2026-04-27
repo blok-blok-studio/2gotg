@@ -45,7 +45,7 @@ function formatBody(p: ContactPayload) {
     ["Message", p.message ?? ""],
   ];
 
-  const text = lines.map(([label, value]) => `${label}: ${value || "—"}`).join("\n");
+  const text = lines.map(([label, value]) => `${label}: ${value || "(not provided)"}`).join("\n");
   const html = `
     <div style="font-family: -apple-system, system-ui, sans-serif; max-width: 560px; margin: 0 auto; padding: 24px;">
       <h2 style="color: #1e3a8a; margin: 0 0 16px;">New travel request</h2>
@@ -58,7 +58,7 @@ function formatBody(p: ContactPayload) {
                 label,
               )}</td>
               <td style="padding: 8px 0; color: #0f172a; border-bottom: 1px solid #e2e8f0; white-space: pre-wrap;">${escapeHtml(
-                value || "—",
+                value || "(not provided)",
               )}</td>
             </tr>`,
           )
@@ -116,7 +116,7 @@ export async function POST(req: Request) {
       from: FROM_EMAIL,
       to: TO_EMAIL,
       replyTo: payload.email,
-      subject: `New trip request — ${payload.firstName} ${payload.lastName ?? ""}`.trim(),
+      subject: `New trip request from ${payload.firstName} ${payload.lastName ?? ""}`.trim(),
       text,
       html,
     });
