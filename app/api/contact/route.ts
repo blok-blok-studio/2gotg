@@ -8,9 +8,9 @@ function getResend() {
   return new Resend(key);
 }
 
-const TO_EMAIL = process.env.CONTACT_TO_EMAIL || "hello@2girlsonthego.com";
+const TO_EMAIL = process.env.CONTACT_TO_EMAIL || "heidi@2gogtravel.com";
 const FROM_EMAIL =
-  process.env.CONTACT_FROM_EMAIL || "2 Girls on the Go <noreply@2girlsonthego.com>";
+  process.env.CONTACT_FROM_EMAIL || "2 Girls on the Go <onboarding@resend.dev>";
 
 type ContactPayload = {
   firstName?: string;
