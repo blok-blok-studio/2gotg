@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { Send, Check, AlertCircle, Loader2 } from "lucide-react";
 
@@ -18,6 +19,7 @@ const travelStyles = [
 type Status = "idle" | "submitting" | "success" | "error";
 
 export function ContactForm() {
+  const router = useRouter();
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [selectedStyles, setSelectedStyles] = useState<string[]>([]);
@@ -30,10 +32,11 @@ export function ContactForm() {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const form = e.currentTarget;
     setStatus("submitting");
     setErrorMsg(null);
 
-    const formData = new FormData(e.currentTarget);
+    const formData = new FormData(form);
     const payload = {
       firstName: String(formData.get("firstName") || ""),
       lastName: String(formData.get("lastName") || ""),
@@ -46,25 +49,40 @@ export function ContactForm() {
       travelStyle: selectedStyles,
     };
 
+    let res: Response;
     try {
-      const res = await fetch("/api/contact", {
+      res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
-      const data = await res.json();
-      if (!res.ok) {
-        setStatus("error");
-        setErrorMsg(data.error || "Something went wrong. Please try again.");
-        return;
-      }
-      setStatus("success");
-      e.currentTarget.reset();
-      setSelectedStyles([]);
     } catch {
       setStatus("error");
-      setErrorMsg("Network error. Please check your connection and try again.");
+      setErrorMsg("Could not reach the server. Check your connection and try again.");
+      return;
     }
+
+    let data: { ok?: boolean; error?: string } = {};
+    try {
+      data = await res.json();
+    } catch {
+      // Non-JSON response — fall through and rely on res.ok
+    }
+
+    if (!res.ok) {
+      setStatus("error");
+      setErrorMsg(data.error || "Something went wrong. Please try again.");
+      return;
+    }
+
+    setStatus("success");
+    try {
+      form.reset();
+    } catch {
+      // Form may already be unmounted — ignore
+    }
+    setSelectedStyles([]);
+    router.push("/contact/thank-you");
   }
 
   return (
