@@ -38,10 +38,11 @@ function LinktreeIcon({ className }: { className?: string }) {
 
 const footerLinks = {
   tours: [
-    { label: "Sicily Summer", href: "/tours/sicily-summer" },
-    { label: "Sicilian Discovery", href: "/tours/sicilian-discovery" },
-    { label: "Macedonia Tour", href: "/tours/macedonia-tour" },
-    { label: "Berlin Adventure", href: "/tours/berlin-adventure" },
+    { label: "Bella Sicilia", href: "/tours/sicily-summer" },
+    { label: "Macedonian Heritage", href: "/tours/macedonia-tour" },
+    { label: "Berlin Wanderlust — Inquire", href: "/contact" },
+    { label: "Royal London — Inquire", href: "/contact" },
+    { label: "Greek Odyssey — Inquire", href: "/contact" },
   ],
   experiences: [
     { label: "Luxury Getaways", href: "/experiences#luxury" },
@@ -175,12 +176,8 @@ export function Footer() {
         {/* Trust badges */}
         <div className="mt-12 pt-8 border-t border-white/10 grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs text-white/40">
           <div className="flex items-center gap-2">
-            <Shield className="h-4 w-4" />
-            <span>ASTA Verified</span>
-          </div>
-          <div className="flex items-center gap-2">
             <Globe className="h-4 w-4" />
-            <span>IATA Accredited</span>
+            <span>Fora Certified</span>
           </div>
           <div className="flex items-center gap-2">
             <CreditCard className="h-4 w-4" />

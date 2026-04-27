@@ -1,103 +1,121 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Clock, DollarSign, MapPin, Star } from "lucide-react";
+import { ArrowRight, MapPin, X, Maximize2 } from "lucide-react";
 import { ShareLinks } from "@/components/shared/share-links";
 import { useHoverCapable } from "@/lib/use-hover-capable";
 
-const tours = [
+type Tour = {
+  slug: string;
+  themedName: string;
+  country: string;
+  continent: string;
+  destination: string;
+  image: string;
+  highlights?: string[];
+  inquireOnly?: boolean;
+};
+
+type TourGroup = {
+  continent: string;
+  country: string;
+  tours: Tour[];
+};
+
+const tourGroups: TourGroup[] = [
   {
-    slug: "sicily-summer",
-    name: "Sicily — September 21 to 27, 2026",
-    destination: "Palermo, Cefalu, Marsala/Erice, Scopello & more",
-    duration: "7 Days / 6 Nights",
-    price: "From $1,750",
-    rating: 5.0,
-    image: "/images/destinations/sicily-italy-escape-travel-package-2026-tour.jpg",
-    badge: "Reserve by May 11, 2026 — $250 deposit, 5 spots left",
-    highlights: [
-      "Palermo historical tour and street food experience",
-      "Cefalu UNESCO cathedral, shopping, and beach day",
-      "Marsala wineries and Castle Venus in Erice",
-      "Scopello hiking and Zingaro Nature Reserve",
-      "Valle dei Templi UNESCO ancient Greek architecture",
-      "Salt Road shimmering pans and ancient windmills",
+    continent: "Europe",
+    country: "Italy",
+    tours: [
+      {
+        slug: "sicily-summer",
+        themedName: "Bella Sicilia",
+        country: "Italy",
+        continent: "Europe",
+        destination: "Palermo, Cefalu, Marsala/Erice, Scopello",
+        image:
+          "/images/destinations/sicily-italy-escape-travel-package-2026-tour.jpg",
+        highlights: [
+          "Palermo historical tour and street food experience",
+          "Cefalu UNESCO cathedral, shopping, and beach day",
+          "Marsala wineries and Castle Venus in Erice",
+          "Scopello hiking and Zingaro Nature Reserve",
+          "Valle dei Templi UNESCO ancient Greek architecture",
+          "Salt Road shimmering pans and ancient windmills",
+        ],
+      },
     ],
   },
   {
-    slug: "macedonia-tour",
-    name: "Macedonia Cultural Escape",
-    destination: "Matka, Vodno, Ohrid, Mavrovo & beyond",
-    duration: "6 / 7 Nights or 4 / 3 Nights",
-    price: "From $550",
-    rating: 5.0,
-    image: "/images/destinations/lake-ohrid-north-macedonia-crystal-water-aerial-tour.jpg",
-    badge: "This month's highlight",
-    highlights: [
-      "Matka Canyon",
-      "Vodno Mountain",
-      "Duf Waterfalls",
-      "Ohrid and Mavrovo Lakes",
-      "Vevcani village",
-      "Orthodox monasteries",
+    continent: "Europe",
+    country: "North Macedonia",
+    tours: [
+      {
+        slug: "macedonia-tour",
+        themedName: "Macedonian Heritage",
+        country: "North Macedonia",
+        continent: "Europe",
+        destination: "Matka, Vodno, Ohrid, Mavrovo & beyond",
+        image:
+          "/images/destinations/lake-ohrid-north-macedonia-crystal-water-aerial-tour.jpg",
+        highlights: [
+          "Matka Canyon",
+          "Vodno Mountain",
+          "Duf Waterfalls",
+          "Ohrid and Mavrovo Lakes",
+          "Vevcani village",
+          "Orthodox monasteries",
+        ],
+      },
     ],
   },
   {
-    slug: "berlin-adventure",
-    name: "Berlin",
-    destination: "Berlin, Germany",
-    duration: "Custom itinerary",
-    price: "Inquire",
-    rating: 5.0,
-    image: "/images/destinations/berlin-brandenburg-gate-germany-travel-tour.jpg",
-    badge: "Explore the World",
-    highlights: [
-      "Brandenburg Gate and the Berlin Wall Memorial",
-      "Museum Island and the Reichstag",
-      "Neighborhood walks: Mitte, Kreuzberg, Prenzlauer Berg",
-      "Day trips to Potsdam and Sanssouci Palace",
-    ],
-  },
-  {
-    slug: "london",
-    name: "London",
-    destination: "London, England",
-    duration: "Custom itinerary",
-    price: "Inquire",
-    rating: 5.0,
-    image: "/images/destinations/london-buckingham-palace-england-travel-tour.jpg",
-    badge: "Explore the World",
-    inquireOnly: true,
-    highlights: [
-      "Buckingham Palace and the Changing of the Guard",
-      "Tower of London and Tower Bridge",
-      "British Museum and West End theatre",
-      "Optional Windsor Castle or Stonehenge day trip",
-    ],
-  },
-  {
-    slug: "greece",
-    name: "Greece",
-    destination: "Athens, Santorini & the islands",
-    duration: "Custom itinerary",
-    price: "Inquire",
-    rating: 5.0,
-    image: "/photos/italy/plemmirio-cypress-turquoise-coast.jpg",
-    badge: "Explore the World",
-    inquireOnly: true,
-    highlights: [
-      "Athens Acropolis and the Plaka neighborhood",
-      "Santorini caldera sunsets and wine tasting",
-      "Island hopping through the Cyclades",
-      "Local food and family-run tavernas",
+    continent: "Europe",
+    country: "Custom Travel",
+    tours: [
+      {
+        slug: "berlin-adventure",
+        themedName: "Berlin Wanderlust",
+        country: "Germany",
+        continent: "Europe",
+        destination: "Berlin, Germany",
+        image:
+          "/images/destinations/berlin-brandenburg-gate-germany-travel-tour.jpg",
+        inquireOnly: true,
+      },
+      {
+        slug: "london",
+        themedName: "Royal London",
+        country: "England",
+        continent: "Europe",
+        destination: "London, England",
+        image:
+          "/images/destinations/london-buckingham-palace-england-travel-tour.jpg",
+        inquireOnly: true,
+      },
+      {
+        slug: "greece",
+        themedName: "Greek Odyssey",
+        country: "Greece",
+        continent: "Europe",
+        destination: "Athens, Santorini & the islands",
+        image:
+          "https://images.unsplash.com/photo-1503152394-c571994fd383?w=1400&q=80",
+        inquireOnly: true,
+      },
     ],
   },
 ];
 
 export function PackageTours() {
   const canHover = useHoverCapable();
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(
+    null
+  );
+
   return (
     <section
       id="package-tours"
@@ -118,107 +136,177 @@ export function PackageTours() {
             <span className="text-primary">Tour Packages</span>
           </h2>
           <p className="mt-4 text-lg text-muted">
-            Expertly planned itineraries with hand-picked hotels, local guides,
-            and unforgettable experiences included.
+            Hand-picked destinations, curated experiences, and trusted local
+            partners — grouped by region.
           </p>
         </div>
 
-        {/* Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {tours.map((tour) => (
-            <motion.div
-              key={tour.slug}
-              {...(canHover ? { whileHover: { y: -6, rotate: 0.5, transition: { duration: 0.2 } } } : {})}
-              className="group relative bg-white rounded-2xl border border-border overflow-hidden hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
-            >
-              {/* Share button */}
-              <div className="absolute top-4 right-4 z-10">
-                <ShareLinks
-                  url={`https://2girlsonthego.com/tours/${tour.slug}`}
-                  title={`${tour.name} — 2 Girls on the Go`}
-                  variant="compact"
-                />
+        {/* Three regional sections */}
+        <div className="space-y-16 lg:space-y-20">
+          {tourGroups.map((group) => (
+            <div key={`${group.continent}-${group.country}`}>
+              {/* Group header */}
+              <div className="mb-8 lg:mb-10">
+                <p className="text-xs font-semibold text-cta uppercase tracking-widest mb-2">
+                  {group.continent}
+                </p>
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">
+                  {group.country}
+                </h3>
               </div>
 
-              {/* Badge */}
-              {tour.badge && (
-                <div className="absolute top-4 left-4 z-10">
-                  <span className="inline-flex items-center bg-cta/95 text-white text-[11px] font-semibold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-lg shadow-cta/30">
-                    {tour.badge}
-                  </span>
-                </div>
-              )}
+              {/* Tour grid */}
+              <div
+                className={`grid gap-6 lg:gap-8 ${
+                  group.tours.length === 1
+                    ? "md:grid-cols-1 max-w-3xl"
+                    : "sm:grid-cols-2 lg:grid-cols-3"
+                }`}
+              >
+                {group.tours.map((tour) => (
+                  <motion.div
+                    key={tour.slug}
+                    {...(canHover
+                      ? {
+                          whileHover: {
+                            y: -6,
+                            rotate: 0.5,
+                            transition: { duration: 0.2 },
+                          },
+                        }
+                      : {})}
+                    className="group relative bg-white rounded-2xl border border-border overflow-hidden hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
+                  >
+                    {/* Share button */}
+                    <div className="absolute top-4 right-4 z-10">
+                      <ShareLinks
+                        url={`https://2girlsonthego.com/tours/${tour.slug}`}
+                        title={`${tour.themedName} — 2 Girls on the Go`}
+                        variant="compact"
+                      />
+                    </div>
 
-              {/* Image */}
-              <div className="relative aspect-[16/9] overflow-hidden">
-                <Image
-                  src={tour.image}
-                  alt={`${tour.name} tour package — ${tour.destination}`}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-                <div className="absolute bottom-4 left-4">
-                  <span className="inline-flex items-center gap-1.5 bg-white/90 backdrop-blur-sm text-xs font-semibold px-3 py-1.5 rounded-full text-foreground">
-                    <MapPin className="h-3 w-3 text-primary" />
-                    {tour.destination}
-                  </span>
-                </div>
-              </div>
-
-              {/* Content */}
-              <div className="p-6">
-                <div className="flex items-start justify-between mb-3">
-                  <h3 className="font-[var(--font-heading)] text-xl lg:text-2xl font-semibold text-foreground group-hover:text-primary transition-colors">
-                    {tour.name}
-                  </h3>
-                  <div className="flex items-center gap-1 text-sm text-cta font-medium shrink-0 ml-3">
-                    <Star className="h-3.5 w-3.5 fill-current" />
-                    {tour.rating}
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4 text-sm text-muted mb-4">
-                  <span className="flex items-center gap-1.5">
-                    <Clock className="h-3.5 w-3.5" />
-                    {tour.duration}
-                  </span>
-                  <span className="flex items-center gap-1.5 font-semibold text-foreground">
-                    <DollarSign className="h-3.5 w-3.5" />
-                    {tour.price}
-                    {tour.price !== "Inquire" && (
-                      <span className="font-normal text-muted">/person</span>
-                    )}
-                  </span>
-                </div>
-
-                {/* Highlights */}
-                <ul className="space-y-2 mb-6">
-                  {tour.highlights.map((highlight) => (
-                    <li
-                      key={highlight}
-                      className="flex items-start gap-2 text-sm text-muted"
+                    {/* Image (clickable for lightbox) */}
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setLightbox({
+                          src: tour.image,
+                          alt: `${tour.themedName} tour package — ${tour.destination}`,
+                        })
+                      }
+                      className="relative aspect-[16/9] overflow-hidden block w-full cursor-zoom-in"
+                      aria-label={`View ${tour.themedName} flyer full size`}
                     >
-                      <span className="h-1.5 w-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
-                      {highlight}
-                    </li>
-                  ))}
-                </ul>
+                      <Image
+                        src={tour.image}
+                        alt={`${tour.themedName} tour package — ${tour.destination}`}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                      <span className="absolute bottom-4 right-4 inline-flex items-center justify-center h-8 w-8 bg-white/90 backdrop-blur-sm rounded-full text-foreground shadow-md">
+                        <Maximize2 className="h-3.5 w-3.5" />
+                      </span>
+                      <div className="absolute bottom-4 left-4">
+                        <span className="inline-flex items-center gap-1.5 bg-white/90 backdrop-blur-sm text-xs font-semibold px-3 py-1.5 rounded-full text-foreground">
+                          <MapPin className="h-3 w-3 text-primary" />
+                          {tour.destination}
+                        </span>
+                      </div>
+                    </button>
 
-                {/* CTA */}
-                <Link
-                  href={tour.inquireOnly ? "/contact" : `/tours/${tour.slug}`}
-                  className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-cta text-white font-semibold text-sm hover:bg-cta-hover transition-colors duration-200 group/btn cursor-pointer"
-                >
-                  {tour.inquireOnly ? "Inquire" : "View Details"}
-                  <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover/btn:translate-x-1" />
-                </Link>
+                    {/* Content */}
+                    <div className="p-6">
+                      <p className="text-[11px] font-semibold uppercase tracking-widest text-cta mb-1">
+                        {tour.continent} · {tour.country}
+                      </p>
+                      <h4 className="font-[var(--font-heading)] text-xl lg:text-2xl font-semibold text-foreground group-hover:text-primary transition-colors mb-4">
+                        {tour.themedName}
+                      </h4>
+
+                      {tour.highlights && tour.highlights.length > 0 ? (
+                        <>
+                          <ul className="space-y-2 mb-6">
+                            {tour.highlights.map((highlight) => (
+                              <li
+                                key={highlight}
+                                className="flex items-start gap-2 text-sm text-muted"
+                              >
+                                <span className="h-1.5 w-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
+                                {highlight}
+                              </li>
+                            ))}
+                          </ul>
+                          <Link
+                            href={`/tours/${tour.slug}`}
+                            className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-cta text-white font-semibold text-sm hover:bg-cta-hover transition-colors duration-200 group/btn cursor-pointer"
+                          >
+                            View Package
+                            <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover/btn:translate-x-1" />
+                          </Link>
+                        </>
+                      ) : (
+                        <Link
+                          href="/contact"
+                          className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-cta text-white font-semibold text-sm hover:bg-cta-hover transition-colors duration-200 group/btn cursor-pointer"
+                        >
+                          Inquire Now
+                          <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover/btn:translate-x-1" />
+                        </Link>
+                      )}
+                    </div>
+                  </motion.div>
+                ))}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {lightbox && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4 sm:p-8"
+            onClick={() => setLightbox(null)}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Tour flyer full view"
+          >
+            <button
+              type="button"
+              onClick={() => setLightbox(null)}
+              className="absolute top-4 right-4 sm:top-6 sm:right-6 h-10 w-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer"
+              aria-label="Close full view"
+            >
+              <X className="h-5 w-5" />
+            </button>
+            <motion.div
+              initial={{ scale: 0.95 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.95 }}
+              transition={{ duration: 0.2 }}
+              className="relative max-w-6xl max-h-[90vh] w-full h-full"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Image
+                src={lightbox.src}
+                alt={lightbox.alt}
+                fill
+                className="object-contain"
+                sizes="100vw"
+                priority
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

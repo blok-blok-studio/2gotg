@@ -26,11 +26,11 @@ const testimonials = [
     avatar: "ML",
   },
   {
-    name: "Carey H.",
-    trip: "Germany",
+    name: "Uncle Doug",
+    trip: "India",
     rating: 5,
     text: "I was on the road and needed a reputable hotel immediately. The booking was quick and easy. I appreciated the very timely response. Thank you.",
-    avatar: "CH",
+    avatar: "UD",
   },
 ];
 
