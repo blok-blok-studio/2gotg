@@ -40,7 +40,7 @@ const tourGroups: TourGroup[] = [
         destination: "Palermo, Cefalu, Marsala/Erice, Scopello",
         image:
           "/images/destinations/sicily-italy-escape-travel-package-2026-tour.jpg",
-        price: "From $1,750",
+        price: "Starting at $1,750",
         spotsAvailable: 5,
         highlights: [
           "Palermo historical tour and street food experience",
@@ -65,7 +65,7 @@ const tourGroups: TourGroup[] = [
         destination: "Matka, Vodno, Ohrid, Mavrovo & beyond",
         image:
           "/images/destinations/lake-ohrid-north-macedonia-crystal-water-aerial-tour.jpg",
-        price: "From $550",
+        price: "Starting at $550",
         highlights: [
           "Matka Canyon",
           "Vodno Mountain",
