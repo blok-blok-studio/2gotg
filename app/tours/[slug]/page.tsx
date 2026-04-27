@@ -23,13 +23,13 @@ const tours: Record<string, TourData> = {
       "Salt Road shimmering pans and ancient windmills",
     ],
     included: [
+      "Flights",
       "Airport and daily transportation",
       "Bilingual guide/hostess, curated experiences",
       "Private villa (up to 6 guests) — pool, gardens, outdoor kitchen, access to beach",
       "Optional tours available — e.g. boat tour / wine tour",
     ],
     notIncluded: [
-      "Flights",
       "Travel insurance",
       "Meals",
     ],
@@ -55,6 +55,7 @@ const tours: Record<string, TourData> = {
       "Orthodox monasteries",
     ],
     included: [
+      "Flights",
       "Airport pick-ups",
       "Multi-lingual guide (English, Spanish, Italian)",
       "Private transportation in comfortable van",
@@ -63,7 +64,6 @@ const tours: Record<string, TourData> = {
       "All tickets (museums, boat rides, monasteries & more)",
     ],
     notIncluded: [
-      "Flights",
       "Travel insurance",
       "Alcoholic drinks",
     ],

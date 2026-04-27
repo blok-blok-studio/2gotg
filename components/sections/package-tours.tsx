@@ -17,6 +17,8 @@ type Tour = {
   image: string;
   highlights?: string[];
   inquireOnly?: boolean;
+  price?: string;
+  spotsAvailable?: number;
 };
 
 type TourGroup = {
@@ -38,6 +40,8 @@ const tourGroups: TourGroup[] = [
         destination: "Palermo, Cefalu, Marsala/Erice, Scopello",
         image:
           "/images/destinations/sicily-italy-escape-travel-package-2026-tour.jpg",
+        price: "From $1,750",
+        spotsAvailable: 5,
         highlights: [
           "Palermo historical tour and street food experience",
           "Cefalu UNESCO cathedral, shopping, and beach day",
@@ -61,6 +65,7 @@ const tourGroups: TourGroup[] = [
         destination: "Matka, Vodno, Ohrid, Mavrovo & beyond",
         image:
           "/images/destinations/lake-ohrid-north-macedonia-crystal-water-aerial-tour.jpg",
+        price: "From $550",
         highlights: [
           "Matka Canyon",
           "Vodno Mountain",
@@ -141,10 +146,144 @@ export function PackageTours() {
           </p>
         </div>
 
-        {/* Three regional sections */}
+        {/* Featured single-tour regions side-by-side */}
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-8 mb-16 lg:mb-20">
+          {tourGroups
+            .filter((g) => g.tours.length === 1)
+            .map((group) => {
+              const tour = group.tours[0];
+              const anchor = group.country.toLowerCase().replace(/\s+/g, "-");
+              return (
+                <div key={`${group.continent}-${group.country}`} id={anchor}>
+                  {/* Group header */}
+                  <div className="mb-5">
+                    <p className="text-[11px] font-semibold text-cta uppercase tracking-widest mb-1">
+                      {group.continent}
+                    </p>
+                    <h3 className="text-xl sm:text-2xl font-bold tracking-tight">
+                      {group.country}
+                    </h3>
+                  </div>
+
+                  <motion.div
+                    {...(canHover
+                      ? {
+                          whileHover: {
+                            y: -6,
+                            rotate: 0.5,
+                            transition: { duration: 0.2 },
+                          },
+                        }
+                      : {})}
+                    className="group relative bg-white rounded-2xl border border-border overflow-hidden hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
+                  >
+                    {/* Share button */}
+                    <div className="absolute top-4 right-4 z-10">
+                      <ShareLinks
+                        url={`https://2girlsonthego.com/tours/${tour.slug}`}
+                        title={`${tour.themedName} — 2 Girls on the Go`}
+                        variant="compact"
+                      />
+                    </div>
+
+                    {/* Image */}
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setLightbox({
+                          src: tour.image,
+                          alt: `${tour.themedName} tour package — ${tour.destination}`,
+                        })
+                      }
+                      className="relative aspect-[16/9] overflow-hidden block w-full cursor-zoom-in"
+                      aria-label={`View ${tour.themedName} flyer full size`}
+                    >
+                      <Image
+                        src={tour.image}
+                        alt={`${tour.themedName} tour package — ${tour.destination}`}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                      <span className="absolute bottom-4 right-4 inline-flex items-center justify-center h-8 w-8 bg-white/90 backdrop-blur-sm rounded-full text-foreground shadow-md">
+                        <Maximize2 className="h-3.5 w-3.5" />
+                      </span>
+                      <div className="absolute bottom-4 left-4">
+                        <span className="inline-flex items-center gap-1.5 bg-white/90 backdrop-blur-sm text-xs font-semibold px-3 py-1.5 rounded-full text-foreground">
+                          <MapPin className="h-3 w-3 text-primary" />
+                          {tour.destination}
+                        </span>
+                      </div>
+                    </button>
+
+                    {/* Content */}
+                    <div className="p-5 lg:p-6">
+                      <h4 className="font-[var(--font-heading)] text-lg lg:text-xl font-semibold text-foreground group-hover:text-primary transition-colors mb-3">
+                        {tour.themedName}
+                      </h4>
+
+                      {(tour.price || tour.spotsAvailable) && (
+                        <div className="flex flex-wrap items-center gap-2 mb-4">
+                          {tour.price && (
+                            <span className="inline-flex items-center bg-primary/10 text-primary text-xs font-semibold px-3 py-1.5 rounded-full">
+                              {tour.price}
+                            </span>
+                          )}
+                          {tour.spotsAvailable !== undefined && (
+                            <span className="inline-flex items-center bg-cta/10 text-cta text-xs font-semibold px-3 py-1.5 rounded-full">
+                              {tour.spotsAvailable} spots available
+                            </span>
+                          )}
+                        </div>
+                      )}
+
+                      {tour.highlights && tour.highlights.length > 0 ? (
+                        <>
+                          <ul className="space-y-1.5 mb-5">
+                            {tour.highlights.map((highlight) => (
+                              <li
+                                key={highlight}
+                                className="flex items-start gap-2 text-sm text-muted"
+                              >
+                                <span className="h-1.5 w-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
+                                {highlight}
+                              </li>
+                            ))}
+                          </ul>
+                          <Link
+                            href={`/tours/${tour.slug}`}
+                            className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-cta text-white font-semibold text-sm hover:bg-cta-hover transition-colors duration-200 group/btn cursor-pointer"
+                          >
+                            View Package
+                            <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover/btn:translate-x-1" />
+                          </Link>
+                        </>
+                      ) : (
+                        <Link
+                          href="/contact"
+                          className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-cta text-white font-semibold text-sm hover:bg-cta-hover transition-colors duration-200 group/btn cursor-pointer"
+                        >
+                          Inquire Now
+                          <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover/btn:translate-x-1" />
+                        </Link>
+                      )}
+                    </div>
+                  </motion.div>
+                </div>
+              );
+            })}
+        </div>
+
+        {/* Multi-tour regional sections (full-width) */}
         <div className="space-y-16 lg:space-y-20">
-          {tourGroups.map((group) => (
-            <div key={`${group.continent}-${group.country}`}>
+          {tourGroups
+            .filter((g) => g.tours.length > 1)
+            .map((group) => (
+            <div
+              key={`${group.continent}-${group.country}`}
+              id={group.country.toLowerCase().replace(/\s+/g, "-")}
+            >
               {/* Group header */}
               <div className="mb-8 lg:mb-10">
                 <p className="text-xs font-semibold text-cta uppercase tracking-widest mb-2">
@@ -156,13 +295,7 @@ export function PackageTours() {
               </div>
 
               {/* Tour grid */}
-              <div
-                className={`grid gap-6 lg:gap-8 ${
-                  group.tours.length === 1
-                    ? "md:grid-cols-1 max-w-3xl"
-                    : "sm:grid-cols-2 lg:grid-cols-3"
-                }`}
-              >
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                 {group.tours.map((tour) => (
                   <motion.div
                     key={tour.slug}
