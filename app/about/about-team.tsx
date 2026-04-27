@@ -1,14 +1,11 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Image from "next/image";
-import { Globe, Award, Heart, MapPin } from "lucide-react";
+import { Award, Heart, Users, HandHeart } from "lucide-react";
 
 const credentials = [
-  { icon: Globe, label: "IATA Accredited Agent" },
-  { icon: Award, label: "ITB Berlin Speaker 2026" },
+  { icon: Award, label: "Certified Fora Advisor" },
   { icon: Heart, label: "40+ Years Traveling" },
-  { icon: MapPin, label: "Solo, Group & Family Trips" },
+  { icon: Users, label: "Solo & Group Travel" },
+  { icon: HandHeart, label: "Travel for a Purpose — Volunteer Experiences" },
 ];
 
 export function AboutTeam() {
@@ -16,32 +13,15 @@ export function AboutTeam() {
     <section id="team" className="py-24 lg:py-32" style={{ background: "linear-gradient(to bottom, #F0F9FF, white 15%, white 85%, #F0F9FF)" }}>
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-sm font-semibold text-cta uppercase tracking-widest mb-3"
-          >
+          <p className="text-sm font-semibold text-cta uppercase tracking-widest mb-3">
             Meet the Founder
-          </motion.p>
-          <motion.h2
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight"
-          >
+          </p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
             Your Travel <span className="text-primary">Architect</span>
-          </motion.h2>
+          </h2>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto"
-        >
+        <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-5 gap-10 lg:gap-16 items-center">
             {/* Photo */}
             <div className="md:col-span-2 flex justify-center">
@@ -101,7 +81,7 @@ export function AboutTeam() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

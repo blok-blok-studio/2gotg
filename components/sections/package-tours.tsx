@@ -10,62 +10,38 @@ import { useHoverCapable } from "@/lib/use-hover-capable";
 const tours = [
   {
     slug: "sicily-summer",
-    name: "Sicily Summer",
-    destination: "Ortigia, Catania & Mt. Etna",
-    duration: "8 Days / 7 Nights",
-    price: "From $2,899",
+    name: "Sicily — September 21 to 27, 2026",
+    destination: "Palermo, Cefalu, Marsala/Erice, Scopello & more",
+    duration: "7 Days / 6 Nights",
+    price: "From $1,750",
     rating: 5.0,
-    image: "/photos/italy/syracuse-cathedral-baroque-facade-ortigia.jpg",
+    image: "/images/destinations/sicily-italy-escape-travel-package-2026-tour.jpg",
+    badge: "Reserve by May 11, 2026 — $250 deposit, 5 spots left",
     highlights: [
-      "Baroque Ortigia & Piazza del Duomo",
-      "Mercato di Ortigia food tour & granita stop",
-      "Plemmirio sea cave boat trip",
-      "Mt. Etna lava-field hike with guide",
-    ],
-  },
-  {
-    slug: "sicilian-discovery",
-    name: "Sicilian Discovery",
-    destination: "Palermo, Agrigento, Taormina",
-    duration: "8 Days / 7 Nights",
-    price: "From $2,899",
-    rating: 4.9,
-    image: "/photos/italy/piazza-del-duomo-ortigia-syracuse.jpg",
-    highlights: [
-      "Valley of the Temples guided tour",
-      "Mt. Etna sunset wine tasting",
-      "Hands-on Sicilian cooking class",
-      "Boat tour of the Aeolian Islands",
+      "Palermo historical tour and street food experience",
+      "Cefalu UNESCO cathedral, shopping, and beach day",
+      "Marsala wineries and Castle Venus in Erice",
+      "Scopello hiking and Zingaro Nature Reserve",
+      "Valle dei Templi UNESCO ancient Greek architecture",
+      "Salt Road shimmering pans and ancient windmills",
     ],
   },
   {
     slug: "macedonia-tour",
-    name: "Macedonia Tour",
-    destination: "Skopje, Ohrid & Bitola",
-    duration: "7 Days / 6 Nights",
-    price: "From $1,799",
+    name: "Macedonia Cultural Escape",
+    destination: "Matka, Vodno, Ohrid, Mavrovo & beyond",
+    duration: "6 / 7 Nights or 4 / 3 Nights",
+    price: "From $550",
     rating: 5.0,
-    image: "/photos/italy/tuscany-rooftop-cypress-ridge-sunset.jpg",
+    image: "/images/destinations/lake-ohrid-north-macedonia-crystal-water-aerial-tour.jpg",
+    badge: "This month's highlight",
     highlights: [
-      "Lake Ohrid UNESCO old town walk",
-      "Skopje bazaar & Stone Bridge tour",
-      "Mavrovo National Park day hike",
-      "Traditional Macedonian wine tasting",
-    ],
-  },
-  {
-    slug: "berlin-adventure",
-    name: "Berlin Adventure",
-    destination: "Berlin, Germany",
-    duration: "6 Days / 5 Nights",
-    price: "From $2,199",
-    rating: 5.0,
-    image: "/photos/italy/ortigia-rooftop-dining-festoon-lights.jpg",
-    highlights: [
-      "ITB Berlin travel-trade insider visit",
-      "Cold War & Berlin Wall walking tour",
-      "Museum Island private guide",
-      "Kreuzberg street-food crawl",
+      "Matka Canyon",
+      "Vodno Mountain",
+      "Duf Waterfalls",
+      "Ohrid and Mavrovo Lakes",
+      "Vevcani village",
+      "Orthodox monasteries",
     ],
   },
 ];
@@ -84,57 +60,44 @@ export function PackageTours() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-6">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-14 lg:mb-20">
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-sm font-semibold text-cta uppercase tracking-widest mb-3"
-          >
-            Curated Packages
-          </motion.p>
-          <motion.h2
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight"
-          >
+          <p className="text-sm font-semibold text-cta uppercase tracking-widest mb-3">
+            Travel With Us
+          </p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
             Ready-to-Book{" "}
             <span className="text-primary">Tour Packages</span>
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-4 text-lg text-muted"
-          >
+          </h2>
+          <p className="mt-4 text-lg text-muted">
             Expertly planned itineraries with hand-picked hotels, local guides,
             and unforgettable experiences included.
-          </motion.p>
+          </p>
         </div>
 
         {/* Grid */}
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
-          {tours.map((tour, i) => (
+          {tours.map((tour) => (
             <motion.div
               key={tour.slug}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
               {...(canHover ? { whileHover: { y: -6, rotate: 0.5, transition: { duration: 0.2 } } } : {})}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
               className="group relative bg-white rounded-2xl border border-border overflow-hidden hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
             >
               {/* Share button */}
               <div className="absolute top-4 right-4 z-10">
                 <ShareLinks
-                  url={`https://2gotg.com/tours/${tour.slug}`}
-                  title={`${tour.name} — 2GoTG Travel`}
+                  url={`https://2girlsonthego.com/tours/${tour.slug}`}
+                  title={`${tour.name} — 2 Girls on the Go`}
                   variant="compact"
                 />
               </div>
+
+              {/* Badge */}
+              {tour.badge && (
+                <div className="absolute top-4 left-4 z-10">
+                  <span className="inline-flex items-center bg-cta/95 text-white text-[11px] font-semibold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-lg shadow-cta/30">
+                    {tour.badge}
+                  </span>
+                </div>
+              )}
 
               {/* Image */}
               <div className="relative aspect-[16/9] overflow-hidden">
@@ -196,7 +159,7 @@ export function PackageTours() {
                   href={`/tours/${tour.slug}`}
                   className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-cta text-white font-semibold text-sm hover:bg-cta-hover transition-colors duration-200 group/btn cursor-pointer"
                 >
-                  View Itinerary
+                  View Details
                   <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover/btn:translate-x-1" />
                 </Link>
               </div>
