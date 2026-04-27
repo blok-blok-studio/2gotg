@@ -11,6 +11,12 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   metadataBase: new URL(siteConfig.url),
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/apple-icon.png",
+  },
   openGraph: {
     title: siteConfig.name,
     description: siteConfig.description,
@@ -18,11 +24,20 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/brand/2-girls-on-the-go-travel-logo-v2.png",
+        width: 1008,
+        height: 1008,
+        alt: `${siteConfig.name} logo`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
+    images: ["/brand/2-girls-on-the-go-travel-logo-v2.png"],
   },
 };
 

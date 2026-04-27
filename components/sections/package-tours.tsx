@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, MapPin, X, Maximize2 } from "lucide-react";
+import { ArrowRight, MapPin, X, Maximize2, AlertCircle } from "lucide-react";
 import { ShareLinks } from "@/components/shared/share-links";
 import { useHoverCapable } from "@/lib/use-hover-capable";
 
@@ -19,6 +19,7 @@ type Tour = {
   inquireOnly?: boolean;
   price?: string;
   spotsAvailable?: number;
+  joinDeadline?: string;
 };
 
 type TourGroup = {
@@ -42,6 +43,7 @@ const tourGroups: TourGroup[] = [
           "/images/destinations/sicily-italy-escape-travel-package-2026-tour.jpg",
         price: "Starting at $1,750",
         spotsAvailable: 5,
+        joinDeadline: "Contact Heidie by May 15, 2026 to join this tour.",
         highlights: [
           "Palermo historical tour and street food experience",
           "Cefalu UNESCO cathedral, shopping, and beach day",
@@ -113,6 +115,62 @@ const tourGroups: TourGroup[] = [
       },
     ],
   },
+  {
+    continent: "North America",
+    country: "United States and Canada",
+    tours: [
+      {
+        slug: "savannah",
+        themedName: "Savannah Charm",
+        country: "United States",
+        continent: "North America",
+        destination: "Savannah, Georgia",
+        image:
+          "https://images.unsplash.com/photo-1546874177-9e664107314e?w=2000&q=90&auto=format&fit=crop",
+        inquireOnly: true,
+      },
+      {
+        slug: "nashville",
+        themedName: "Music City",
+        country: "United States",
+        continent: "North America",
+        destination: "Nashville, Tennessee",
+        image:
+          "https://images.unsplash.com/photo-1505672678657-cc7037095e60?w=2000&q=90&auto=format&fit=crop",
+        inquireOnly: true,
+      },
+      {
+        slug: "napa-valley",
+        themedName: "Napa Wine Country",
+        country: "United States",
+        continent: "North America",
+        destination: "Napa Valley, California",
+        image:
+          "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=2000&q=90&auto=format&fit=crop",
+        inquireOnly: true,
+      },
+      {
+        slug: "gulf-shores",
+        themedName: "Gulf Coast Escape",
+        country: "United States",
+        continent: "North America",
+        destination: "Gulf Shores, Alabama",
+        image:
+          "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=2000&q=90&auto=format&fit=crop",
+        inquireOnly: true,
+      },
+      {
+        slug: "calgary-stampede",
+        themedName: "Calgary Stampede",
+        country: "Canada",
+        continent: "North America",
+        destination: "Calgary, Alberta",
+        image:
+          "https://images.unsplash.com/photo-1517935706615-2717063c2225?w=2000&q=90&auto=format&fit=crop",
+        inquireOnly: true,
+      },
+    ],
+  },
 ];
 
 export function PackageTours() {
@@ -175,7 +233,7 @@ export function PackageTours() {
                           },
                         }
                       : {})}
-                    className="group relative bg-white rounded-2xl border border-border overflow-hidden hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
+                    className="group relative bg-white rounded-2xl border border-border overflow-hidden transform-gpu hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
                   >
                     {/* Share button */}
                     <div className="absolute top-4 right-4 z-10">
@@ -195,7 +253,7 @@ export function PackageTours() {
                           alt: `${tour.themedName} tour package — ${tour.destination}`,
                         })
                       }
-                      className="relative aspect-[16/9] overflow-hidden block w-full cursor-zoom-in"
+                      className="relative aspect-[16/9] overflow-hidden rounded-t-2xl block w-full cursor-zoom-in"
                       aria-label={`View ${tour.themedName} flyer full size`}
                     >
                       <Image
@@ -235,6 +293,15 @@ export function PackageTours() {
                               {tour.spotsAvailable} spots available
                             </span>
                           )}
+                        </div>
+                      )}
+
+                      {tour.joinDeadline && (
+                        <div className="flex items-start gap-2 mb-4 p-3 rounded-lg bg-amber-50 border border-amber-200">
+                          <AlertCircle className="h-4 w-4 text-amber-600 mt-0.5 shrink-0" />
+                          <p className="text-xs text-amber-800 leading-snug">
+                            {tour.joinDeadline}
+                          </p>
                         </div>
                       )}
 
@@ -308,7 +375,7 @@ export function PackageTours() {
                           },
                         }
                       : {})}
-                    className="group relative bg-white rounded-2xl border border-border overflow-hidden hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
+                    className="group relative bg-white rounded-2xl border border-border overflow-hidden transform-gpu hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
                   >
                     {/* Share button */}
                     <div className="absolute top-4 right-4 z-10">
@@ -328,7 +395,7 @@ export function PackageTours() {
                           alt: `${tour.themedName} tour package — ${tour.destination}`,
                         })
                       }
-                      className="relative aspect-[16/9] overflow-hidden block w-full cursor-zoom-in"
+                      className="relative aspect-[16/9] overflow-hidden rounded-t-2xl block w-full cursor-zoom-in"
                       aria-label={`View ${tour.themedName} flyer full size`}
                     >
                       <Image

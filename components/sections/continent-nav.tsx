@@ -20,6 +20,12 @@ const regions = [
     themedName: "Berlin · London · Greece",
     anchor: "custom-travel",
   },
+  {
+    continent: "North America",
+    country: "United States and Canada",
+    themedName: "Savannah · Nashville · Napa · Gulf Shores · Calgary",
+    anchor: "united-states-and-canada",
+  },
 ];
 
 export function ContinentNav() {
