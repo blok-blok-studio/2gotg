@@ -34,7 +34,7 @@ export function CTA() {
           className="mt-6 text-base sm:text-lg text-white/60 max-w-2xl mx-auto"
         >
           Tell us your dream destination and travel style. Our expert advisors
-          will craft a personalized itinerary you&apos;ll love — no commitment required.
+          will craft a personalized itinerary you&apos;ll love, no commitment required.
         </motion.p>
         <motion.div
           className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"

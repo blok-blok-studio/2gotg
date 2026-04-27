@@ -6,14 +6,14 @@ const tours: Record<string, TourData> = {
   "sicily-summer": {
     slug: "sicily-summer",
     name: "Bella Sicilia",
-    destination: "Europe · Italy — Palermo, Cefalu, Marsala/Erice, Scopello",
+    destination: "Europe · Italy, Palermo, Cefalu, Marsala/Erice, Scopello",
     duration: "7 Days / 6 Nights",
     price: "From $1,750",
     rating: 5.0,
     image:
       "/images/destinations/sicily-italy-escape-travel-package-2026-tour.jpg",
     description:
-      "A week in Sicily based out of a private villa with pool, gardens, and outdoor kitchen — beach access, bilingual hostess, and curated experiences across Palermo, Cefalu, Marsala/Erice, and Scopello.",
+      "A week in Sicily based out of a private villa with pool, gardens, and outdoor kitchen, beach access, bilingual hostess, and curated experiences across Palermo, Cefalu, Marsala/Erice, and Scopello.",
     highlights: [
       "Palermo historical tour and street food experience",
       "Cefalu UNESCO cathedral, shopping, and beach day",
@@ -26,8 +26,8 @@ const tours: Record<string, TourData> = {
       "Flights",
       "Airport and daily transportation",
       "Bilingual guide/hostess, curated experiences",
-      "Private villa (up to 6 guests) — pool, gardens, outdoor kitchen, access to beach",
-      "Optional tours available — e.g. boat tour / wine tour",
+      "Private villa (up to 6 guests), pool, gardens, outdoor kitchen, access to beach",
+      "Optional tours available, e.g. boat tour / wine tour",
     ],
     notIncluded: [
       "Travel insurance",
@@ -38,14 +38,14 @@ const tours: Record<string, TourData> = {
   "macedonia-tour": {
     slug: "macedonia-tour",
     name: "Macedonian Heritage",
-    destination: "Europe · North Macedonia — Matka, Vodno, Ohrid, Mavrovo",
+    destination: "Europe · North Macedonia, Matka, Vodno, Ohrid, Mavrovo",
     duration: "6 Days / 7 Nights or 4 Days / 3 Nights",
     price: "From $550",
     rating: 5.0,
     image:
       "/images/destinations/lake-ohrid-north-macedonia-crystal-water-aerial-tour.jpg",
     description:
-      "An immersive small-group cultural experience across North Macedonia — Matka Canyon, Vodno Mountain, Lake Ohrid, Mavrovo, and the Orthodox monasteries — with all meals, accommodations, and tickets included.",
+      "An immersive small-group cultural experience across North Macedonia, Matka Canyon, Vodno Mountain, Lake Ohrid, Mavrovo, and the Orthodox monasteries, with all meals, accommodations, and tickets included.",
     highlights: [
       "Matka Canyon",
       "Vodno Mountain",
@@ -84,7 +84,7 @@ export async function generateMetadata({
   if (!tour) return { title: "Tour Not Found" };
 
   return {
-    title: `${tour.name} — ${tour.duration}`,
+    title: `${tour.name}, ${tour.duration}`,
     description: tour.description,
     openGraph: {
       title: `${tour.name} | 2 Girls on the Go`,

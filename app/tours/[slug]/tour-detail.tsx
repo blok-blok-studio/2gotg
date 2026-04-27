@@ -26,7 +26,7 @@ export function TourDetail({ tour }: { tour: TourData }) {
       <section className="relative h-[60vh] min-h-[420px] max-h-[600px]">
         <Image
           src={tour.image}
-          alt={`${tour.name} — ${tour.destination}`}
+          alt={`${tour.name}, ${tour.destination}`}
           fill
           className="object-cover"
           priority
@@ -111,7 +111,7 @@ export function TourDetail({ tour }: { tour: TourData }) {
             <h3 className="text-base font-semibold mb-3">Share</h3>
             <ShareLinks
               url={`https://2girlsonthego.com/tours/${tour.slug}`}
-              title={`${tour.name} — 2 Girls on the Go`}
+              title={`${tour.name}, 2 Girls on the Go`}
             />
           </div>
         </div>

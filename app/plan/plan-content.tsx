@@ -41,9 +41,9 @@ type Timeline =
 const TOTAL_STEPS = 4;
 
 const budgetOptions: { label: string; value: BudgetRange; icon: string }[] = [
-  { label: "$1K — $2.5K", value: "$1K-$2.5K", icon: "$" },
-  { label: "$2.5K — $5K", value: "$2.5K-$5K", icon: "$$" },
-  { label: "$5K — $10K", value: "$5K-$10K", icon: "$$$" },
+  { label: "$1K, $2.5K", value: "$1K-$2.5K", icon: "$" },
+  { label: "$2.5K, $5K", value: "$2.5K-$5K", icon: "$$" },
+  { label: "$5K, $10K", value: "$5K-$10K", icon: "$$$" },
   { label: "$10K+", value: "$10K+", icon: "$$$$" },
 ];
 
@@ -63,8 +63,8 @@ const tripTypes: { label: string; value: TripType; icon: React.ReactNode }[] = [
 
 const timelineOptions: { label: string; value: Timeline; description: string }[] = [
   { label: "Within 1 month", value: "1mo", description: "Ready to go soon" },
-  { label: "1 — 3 months", value: "1-3mo", description: "Planning ahead" },
-  { label: "3 — 6 months", value: "3-6mo", description: "Taking my time" },
+  { label: "1, 3 months", value: "1-3mo", description: "Planning ahead" },
+  { label: "3, 6 months", value: "3-6mo", description: "Taking my time" },
   { label: "6+ months", value: "6mo+", description: "Long-term planning" },
   { label: "Just browsing", value: "browsing", description: "Exploring options" },
 ];
@@ -634,7 +634,7 @@ function StepTimeline({
         </h2>
       </div>
       <p className="text-sm text-muted mb-6">
-        No pressure — even if you&apos;re just browsing, we&apos;ll send
+        No pressure, even if you&apos;re just browsing, we&apos;ll send
         inspiration that matches your pace.
       </p>
       <div className="flex flex-col gap-3">

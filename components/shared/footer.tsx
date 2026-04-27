@@ -40,9 +40,9 @@ const footerLinks = {
   tours: [
     { label: "Bella Sicilia", href: "/tours/sicily-summer" },
     { label: "Macedonian Heritage", href: "/tours/macedonia-tour" },
-    { label: "Berlin Wanderlust — Inquire", href: "/contact" },
-    { label: "Royal London — Inquire", href: "/contact" },
-    { label: "Greek Odyssey — Inquire", href: "/contact" },
+    { label: "Berlin Wanderlust, Inquire", href: "/contact" },
+    { label: "Royal London, Inquire", href: "/contact" },
+    { label: "Greek Odyssey, Inquire", href: "/contact" },
   ],
   experiences: [
     { label: "Luxury Getaways", href: "/experiences#luxury" },
@@ -96,7 +96,7 @@ export function Footer() {
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/60">
               A boutique travel agency owned by Heidie Haynes. Custom international and
               domestic itineraries built on more than 40 years of personal travel
-              experience. We make travel accessible — whether it&apos;s a weekend close
+              experience. We make travel accessible, whether it&apos;s a weekend close
               to home or an exotic month abroad.
             </p>
             <div className="mt-6 space-y-3 text-sm">

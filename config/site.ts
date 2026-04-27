@@ -7,7 +7,7 @@ export const siteConfig = {
   contact: {
     email: "heidi@2gogtravel.com",
     phone: "(817) 650-8455",
-    address: "United States — serving travelers worldwide",
+    address: "United States, serving travelers worldwide",
   },
   social: {
     instagram: "https://www.instagram.com/2_girlsonthego/",

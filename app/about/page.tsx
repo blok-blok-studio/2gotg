@@ -9,7 +9,7 @@ import { CTA } from "@/components/sections/cta";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Meet the passionate team behind 2GoTG Travel. 14 years of crafting extraordinary journeys for thousands of happy travelers worldwide.",
+    "Meet Heidie Haynes, founder of 2 Girls on the Go. More than 40 years of personal travel experience behind every itinerary she builds.",
 };
 
 export default function AboutPage() {

@@ -30,14 +30,14 @@ const experiences = [
   {
     icon: Landmark,
     title: "Cultural Immersion",
-    description: "Live like a local — cooking classes, artisan workshops, and authentic experiences off the tourist trail.",
+    description: "Live like a local, cooking classes, artisan workshops, and authentic experiences off the tourist trail.",
     color: "from-amber-500/15 to-orange-500/5",
     iconColor: "text-amber-600",
   },
   {
     icon: Compass,
     title: "Honeymoon Packages",
-    description: "Romantic escapes designed for newlyweds — from overwater bungalows to Tuscan countryside retreats.",
+    description: "Romantic escapes designed for newlyweds, from overwater bungalows to Tuscan countryside retreats.",
     color: "from-primary/15 to-primary-light/5",
     iconColor: "text-primary",
   },

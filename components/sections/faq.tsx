@@ -15,11 +15,11 @@ const faqs = [
   },
   {
     q: "Do you plan trips for solo travelers?",
-    a: "Absolutely. Solo travel — especially for women — is one of our specialties. We design itineraries that balance independence, safety, and meaningful local connection.",
+    a: "Absolutely. Solo travel, especially for women, is one of our specialties. We design itineraries that balance independence, safety, and meaningful local connection.",
   },
   {
     q: "How customized are your itineraries?",
-    a: "Every trip is built by hand around your interests, pace, and budget. There are no cookie-cutter packages here — each itinerary is reviewed personally by Heidie before it lands in your inbox.",
+    a: "Every trip is built by hand around your interests, pace, and budget. There are no cookie-cutter packages here, each itinerary is reviewed personally by Heidie before it lands in your inbox.",
   },
   {
     q: "What if my plans change after booking?",

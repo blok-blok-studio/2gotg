@@ -17,8 +17,9 @@ export function AboutHero() {
             Passionate About <span className="text-primary">Travel</span>
           </h1>
           <p className="mt-4 text-lg text-muted max-w-xl mx-auto">
-            For over a decade, we&apos;ve helped thousands of travelers discover
-            the world&apos;s most remarkable destinations with personalized care and expertise.
+            With more than 40 years of personal travel experience, Heidie helps
+            travelers discover remarkable destinations with personal care and
+            real know-how.
           </p>
         </motion.div>
       </div>

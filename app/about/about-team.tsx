@@ -5,7 +5,7 @@ const credentials = [
   { icon: Award, label: "Certified Fora Advisor" },
   { icon: Heart, label: "40+ Years Traveling" },
   { icon: Users, label: "Solo & Group Travel" },
-  { icon: HandHeart, label: "Travel for a Purpose — Volunteer Experiences" },
+  { icon: HandHeart, label: "Travel for a Purpose, Volunteer Experiences" },
 ];
 
 export function AboutTeam() {
@@ -29,7 +29,7 @@ export function AboutTeam() {
                 <div className="w-64 md:w-full md:h-auto aspect-[3/4] rounded-2xl border border-primary/10 overflow-hidden shadow-xl shadow-primary/10">
                   <Image
                     src="/brand/heidie-haynes-2-girls-on-the-go-founder.jpg"
-                    alt="Heidie Haynes — founder of 2 Girls on the Go travel agency"
+                    alt="Heidie Haynes, founder of 2 Girls on the Go travel agency"
                     width={787}
                     height={1400}
                     className="object-cover w-full h-full"
@@ -52,9 +52,9 @@ export function AboutTeam() {
 
               <div className="space-y-4 text-muted leading-relaxed">
                 <p>
-                  As an experienced traveler having traveled for more than 40 years —
-                  individually, with groups, and with family — I love what I do, and that is
-                  introducing the world of travel and culture to others.
+                  As an experienced traveler having traveled for more than 40 years
+                  on her own, with groups, and with family, I love what I do, and that
+                  is introducing the world of travel and culture to others.
                 </p>
                 <p>
                   Some people wait a lifetime for that one special trip. I believe it is my

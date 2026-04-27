@@ -35,15 +35,15 @@ export function AboutStory() {
             <div className="space-y-4 text-muted leading-relaxed">
               <p>
                 2 Girls on the Go was born from a simple belief: travel should be
-                transformative, not transactional. Heidie has spent more than four
-                decades exploring the world — solo, with family, and with groups —
-                and now she puts that experience to work for her clients.
+                transformative, not transactional. Heidie has been traveling for
+                more than 40 years, on her own, with family, and with groups, and
+                now she puts that experience to work for her clients.
               </p>
               <p>
                 Every itinerary is crafted by hand. Every recommendation comes from
-                first-hand experience. Every traveler is treated like family. There are
-                no cookie-cutter packages here — only journeys built around the people
-                taking them.
+                first hand experience. Every traveler is treated like family. There
+                are no cookie cutter packages here, only journeys built around the
+                people taking them.
               </p>
               <p>
                 Whether it&apos;s a weekend escape close to home or a month abroad on

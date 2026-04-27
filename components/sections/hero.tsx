@@ -103,7 +103,7 @@ export function Hero() {
             >
               Custom international and domestic itineraries built on more than 40 years
               of personal travel experience. From a weekend close to home to a faraway
-              exotic land, we make travel accessible — no matter the budget.
+              exotic land, we make travel accessible, no matter the budget.
             </motion.p>
 
             <motion.div
@@ -148,7 +148,7 @@ export function Hero() {
             </motion.div>
           </div>
 
-          {/* Right — Image mosaic */}
+          {/* Right, Image mosaic */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}

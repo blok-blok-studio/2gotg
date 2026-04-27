@@ -146,7 +146,7 @@ const tourGroups: TourGroup[] = [
         continent: "North America",
         destination: "Napa Valley, California",
         image:
-          "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=2000&q=90&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1474722883778-792e7990302f?w=2000&q=90&auto=format&fit=crop",
         inquireOnly: true,
       },
       {
@@ -200,7 +200,7 @@ export function PackageTours() {
           </h2>
           <p className="mt-4 text-lg text-muted">
             Hand-picked destinations, curated experiences, and trusted local
-            partners — grouped by region.
+            partners, grouped by region.
           </p>
         </div>
 
@@ -239,7 +239,7 @@ export function PackageTours() {
                     <div className="absolute top-4 right-4 z-10">
                       <ShareLinks
                         url={`https://2girlsonthego.com/tours/${tour.slug}`}
-                        title={`${tour.themedName} — 2 Girls on the Go`}
+                        title={`${tour.themedName}, 2 Girls on the Go`}
                         variant="compact"
                       />
                     </div>
@@ -250,7 +250,7 @@ export function PackageTours() {
                       onClick={() =>
                         setLightbox({
                           src: tour.image,
-                          alt: `${tour.themedName} tour package — ${tour.destination}`,
+                          alt: `${tour.themedName} tour package, ${tour.destination}`,
                         })
                       }
                       className="relative aspect-[16/9] overflow-hidden rounded-t-2xl block w-full cursor-zoom-in"
@@ -258,7 +258,7 @@ export function PackageTours() {
                     >
                       <Image
                         src={tour.image}
-                        alt={`${tour.themedName} tour package — ${tour.destination}`}
+                        alt={`${tour.themedName} tour package, ${tour.destination}`}
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                         sizes="(max-width: 768px) 100vw, 50vw"
@@ -381,7 +381,7 @@ export function PackageTours() {
                     <div className="absolute top-4 right-4 z-10">
                       <ShareLinks
                         url={`https://2girlsonthego.com/tours/${tour.slug}`}
-                        title={`${tour.themedName} — 2 Girls on the Go`}
+                        title={`${tour.themedName}, 2 Girls on the Go`}
                         variant="compact"
                       />
                     </div>
@@ -392,7 +392,7 @@ export function PackageTours() {
                       onClick={() =>
                         setLightbox({
                           src: tour.image,
-                          alt: `${tour.themedName} tour package — ${tour.destination}`,
+                          alt: `${tour.themedName} tour package, ${tour.destination}`,
                         })
                       }
                       className="relative aspect-[16/9] overflow-hidden rounded-t-2xl block w-full cursor-zoom-in"
@@ -400,7 +400,7 @@ export function PackageTours() {
                     >
                       <Image
                         src={tour.image}
-                        alt={`${tour.themedName} tour package — ${tour.destination}`}
+                        alt={`${tour.themedName} tour package, ${tour.destination}`}
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                         sizes="(max-width: 768px) 100vw, 50vw"
