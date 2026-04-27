@@ -90,7 +90,7 @@ const tourGroups: TourGroup[] = [
         continent: "Europe",
         destination: "Berlin, Germany",
         image:
-          "/images/destinations/berlin-brandenburg-gate-germany-travel-tour.jpg",
+          "/images/destinations/berlin-fernsehturm-germany-travel-tour.jpg",
         inquireOnly: true,
       },
       {
