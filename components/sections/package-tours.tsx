@@ -90,7 +90,7 @@ const tourGroups: TourGroup[] = [
         continent: "Europe",
         destination: "Berlin, Germany",
         image:
-          "/images/destinations/berlin-fernsehturm-germany-travel-tour.jpg",
+          "/images/destinations/berlin-brandenburg-gate-germany-travel-tour.jpg",
         inquireOnly: true,
       },
       {
@@ -136,7 +136,7 @@ const tourGroups: TourGroup[] = [
         continent: "North America",
         destination: "Nashville, Tennessee",
         image:
-          "https://images.unsplash.com/photo-1505672678657-cc7037095e60?w=2000&q=90&auto=format&fit=crop",
+          "/images/destinations/nashville-tennessee-lukes-32-bridge-tour.jpg",
         inquireOnly: true,
       },
       {
@@ -156,7 +156,7 @@ const tourGroups: TourGroup[] = [
         continent: "North America",
         destination: "Gulf Shores, Alabama",
         image:
-          "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=2000&q=90&auto=format&fit=crop",
+          "/images/destinations/gulf-shores-alabama-sunset-beach-tour.jpg",
         inquireOnly: true,
       },
       {
@@ -166,7 +166,7 @@ const tourGroups: TourGroup[] = [
         continent: "North America",
         destination: "Calgary, Alberta",
         image:
-          "/images/destinations/canada-rocky-mountains-travel-tour.jpg",
+          "https://images.unsplash.com/photo-1517935706615-2717063c2225?w=2000&q=90&auto=format&fit=crop",
         inquireOnly: true,
       },
     ],

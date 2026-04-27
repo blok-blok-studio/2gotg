@@ -26,11 +26,11 @@ const testimonials = [
     avatar: "ML",
   },
   {
-    name: "Uncle Doug",
+    name: "Doug Lowery",
     trip: "India",
     rating: 5,
-    text: "I was on the road and needed a reputable hotel immediately. The booking was quick and easy. I appreciated the very timely response. Thank you.",
-    avatar: "UD",
+    text: "It was a great experience working with your travel agency from beginning to end. You found excellent rates for our trip and secured aisle seats for all of us, which made a big difference on the long flights. You were always available to answer any questions we had, making the entire process seamless and stress-free. I would highly recommend your services.",
+    avatar: "DL",
   },
 ];
 

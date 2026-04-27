@@ -12,6 +12,9 @@ const tours: Record<string, TourData> = {
     rating: 5.0,
     image:
       "/images/destinations/sicily-italy-escape-travel-package-2026-tour.jpg",
+    flyer: "/images/destinations/sicily-italy-2girls-on-the-go-tour-flyer-2026.jpg",
+    flyerAlt:
+      "Bella Sicilia 2026 tour flyer, 2 Girls on the Go travel package to Palermo, Cefalu, Marsala, Erice, and Scopello",
     description:
       "A week in Sicily based out of a private villa with pool, gardens, and outdoor kitchen, beach access, bilingual hostess, and curated experiences across Palermo, Cefalu, Marsala/Erice, and Scopello.",
     highlights: [

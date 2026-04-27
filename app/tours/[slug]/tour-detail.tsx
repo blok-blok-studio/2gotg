@@ -17,6 +17,8 @@ export interface TourData {
   highlights: string[];
   included: string[];
   notIncluded?: string[];
+  flyer?: string;
+  flyerAlt?: string;
 }
 
 export function TourDetail({ tour }: { tour: TourData }) {
@@ -59,6 +61,34 @@ export function TourDetail({ tour }: { tour: TourData }) {
         }}
       >
         <div className="mx-auto max-w-3xl px-5 sm:px-8 lg:px-6 space-y-8">
+          {/* Tour Flyer */}
+          {tour.flyer && (
+            <div className="bg-white rounded-2xl border border-border p-4 sm:p-6 shadow-lg shadow-primary/5">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4">
+                Tour Flyer
+              </h2>
+              <a
+                href={tour.flyer}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block relative w-full overflow-hidden rounded-xl border border-border hover:border-primary/30 transition-colors cursor-zoom-in"
+                aria-label={`View ${tour.name} flyer full size`}
+              >
+                <Image
+                  src={tour.flyer}
+                  alt={
+                    tour.flyerAlt ??
+                    `${tour.name} tour flyer, ${tour.destination}`
+                  }
+                  width={1200}
+                  height={1600}
+                  className="w-full h-auto object-contain"
+                  sizes="(max-width: 768px) 100vw, 768px"
+                />
+              </a>
+            </div>
+          )}
+
           {/* Package Includes */}
           <div className="bg-white rounded-2xl border border-border p-6 sm:p-8 shadow-lg shadow-primary/5">
             <h2 className="text-2xl sm:text-3xl font-bold mb-6">
