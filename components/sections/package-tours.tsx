@@ -44,6 +44,56 @@ const tours = [
       "Orthodox monasteries",
     ],
   },
+  {
+    slug: "berlin-adventure",
+    name: "Berlin",
+    destination: "Berlin, Germany",
+    duration: "Custom itinerary",
+    price: "Inquire",
+    rating: 5.0,
+    image: "/images/destinations/berlin-brandenburg-gate-germany-travel-tour.jpg",
+    badge: "Explore the World",
+    highlights: [
+      "Brandenburg Gate and the Berlin Wall Memorial",
+      "Museum Island and the Reichstag",
+      "Neighborhood walks: Mitte, Kreuzberg, Prenzlauer Berg",
+      "Day trips to Potsdam and Sanssouci Palace",
+    ],
+  },
+  {
+    slug: "london",
+    name: "London",
+    destination: "London, England",
+    duration: "Custom itinerary",
+    price: "Inquire",
+    rating: 5.0,
+    image: "/images/destinations/london-buckingham-palace-england-travel-tour.jpg",
+    badge: "Explore the World",
+    inquireOnly: true,
+    highlights: [
+      "Buckingham Palace and the Changing of the Guard",
+      "Tower of London and Tower Bridge",
+      "British Museum and West End theatre",
+      "Optional Windsor Castle or Stonehenge day trip",
+    ],
+  },
+  {
+    slug: "greece",
+    name: "Greece",
+    destination: "Athens, Santorini & the islands",
+    duration: "Custom itinerary",
+    price: "Inquire",
+    rating: 5.0,
+    image: "/photos/italy/plemmirio-cypress-turquoise-coast.jpg",
+    badge: "Explore the World",
+    inquireOnly: true,
+    highlights: [
+      "Athens Acropolis and the Plaka neighborhood",
+      "Santorini caldera sunsets and wine tasting",
+      "Island hopping through the Cyclades",
+      "Local food and family-run tavernas",
+    ],
+  },
 ];
 
 export function PackageTours() {
@@ -74,7 +124,7 @@ export function PackageTours() {
         </div>
 
         {/* Grid */}
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {tours.map((tour) => (
             <motion.div
               key={tour.slug}
@@ -137,7 +187,9 @@ export function PackageTours() {
                   <span className="flex items-center gap-1.5 font-semibold text-foreground">
                     <DollarSign className="h-3.5 w-3.5" />
                     {tour.price}
-                    <span className="font-normal text-muted">/person</span>
+                    {tour.price !== "Inquire" && (
+                      <span className="font-normal text-muted">/person</span>
+                    )}
                   </span>
                 </div>
 
@@ -156,10 +208,10 @@ export function PackageTours() {
 
                 {/* CTA */}
                 <Link
-                  href={`/tours/${tour.slug}`}
+                  href={tour.inquireOnly ? "/contact" : `/tours/${tour.slug}`}
                   className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-cta text-white font-semibold text-sm hover:bg-cta-hover transition-colors duration-200 group/btn cursor-pointer"
                 >
-                  View Details
+                  {tour.inquireOnly ? "Inquire" : "View Details"}
                   <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover/btn:translate-x-1" />
                 </Link>
               </div>

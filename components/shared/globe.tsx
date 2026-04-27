@@ -55,10 +55,8 @@ export function Globe({ className = "", size = 600 }: GlobeProps) {
         { location: [40.6333, 14.6000], size: 0.06 },  // Amalfi Coast
         { location: [51.5074, -0.1278], size: 0.07 },  // London
         // US destinations
-        { location: [36.1627, -86.7816], size: 0.08 }, // Nashville
         { location: [40.7128, -74.0060], size: 0.07 }, // New York
         { location: [25.7617, -80.1918], size: 0.06 }, // Miami
-        { location: [32.0809, -81.0912], size: 0.06 }, // Savannah
         { location: [32.7765, -79.9311], size: 0.06 }, // Charleston
         { location: [21.3069, -157.8583], size: 0.06 }, // Hawaii
       ],
