@@ -5,6 +5,7 @@ import { ContactForm } from "./contact-form";
 import { ContactInfo } from "./contact-info";
 import { FAQ } from "@/components/sections/faq";
 import { siteConfig } from "@/config/site";
+import { faqs } from "@/lib/faq";
 
 export const metadata: Metadata = {
   title: "Contact Heidie",
@@ -20,11 +21,25 @@ export const metadata: Metadata = {
   },
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map(({ q, a }) => ({
+    "@type": "Question",
+    name: q,
+    acceptedAnswer: { "@type": "Answer", text: a },
+  })),
+};
+
 export default function ContactPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <ContactHero />
-      <section className="py-16 lg:py-24" style={{ background: "linear-gradient(to bottom, #F0F9FF, white 15%, white)" }}>
+      <section className="py-16 lg:py-24" style={{ background: "linear-gradient(to bottom, #F0F9FF, white)" }}>
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-6">
           {/* Discovery call banner */}
           <a

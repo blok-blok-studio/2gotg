@@ -21,9 +21,33 @@ export const metadata: Metadata = {
   },
 };
 
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Heidie Haynes",
+  jobTitle: "Founder & Travel Advisor",
+  worksFor: {
+    "@type": "TravelAgency",
+    name: siteConfig.name,
+    url: siteConfig.url,
+  },
+  url: `${siteConfig.url}/about`,
+  description:
+    "Heidie Haynes is the founder of 2 Girls on the Go, a U.S.-based boutique travel agency. With more than 40 years of personal travel experience across 6 continents, she designs custom itineraries for solo travelers, couples, and small groups.",
+  sameAs: [
+    siteConfig.social.instagram,
+    siteConfig.social.facebook,
+    siteConfig.social.linktree,
+  ],
+};
+
 export default function AboutPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
       <AboutHero />
       <AboutStory />
       <AboutValues />

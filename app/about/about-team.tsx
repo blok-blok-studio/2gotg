@@ -10,7 +10,7 @@ const credentials = [
 
 export function AboutTeam() {
   return (
-    <section id="team" className="py-24 lg:py-32" style={{ background: "linear-gradient(to bottom, #F0F9FF, white 15%, white 85%, #F0F9FF)" }}>
+    <section id="team" className="py-24 lg:py-32" style={{ background: "linear-gradient(to bottom, #F0F9FF, white)" }}>
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <p className="text-sm font-semibold text-cta uppercase tracking-widest mb-3">

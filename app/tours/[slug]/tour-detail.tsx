@@ -56,8 +56,7 @@ export function TourDetail({ tour }: { tour: TourData }) {
       <section
         className="py-16 lg:py-24"
         style={{
-          background:
-            "linear-gradient(to bottom, #F0F9FF, white 15%, white 85%, #F0F9FF)",
+          background: "linear-gradient(to bottom, #F0F9FF, white)",
         }}
       >
         <div className="mx-auto max-w-3xl px-5 sm:px-8 lg:px-6 space-y-8">

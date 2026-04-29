@@ -15,8 +15,7 @@ export default function ThankYouPage() {
     <section
       className="relative pt-36 pb-24 lg:pt-44 lg:pb-32 min-h-screen"
       style={{
-        background:
-          "linear-gradient(to bottom, #F0F9FF, white 20%, white 80%, #F0F9FF)",
+        background: "linear-gradient(to bottom, #F0F9FF, white)",
       }}
     >
       <div className="mx-auto max-w-2xl px-5 sm:px-8 lg:px-6">
