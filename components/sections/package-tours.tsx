@@ -149,9 +149,9 @@ const tourGroups: TourGroup[] = [
         continent: "North America",
         destination: "Nashville, Tennessee",
         image:
-          "/images/destinations/nashville-tennessee-lukes-32-bridge-tour.jpg",
+          "/images/destinations/nashville-tennessee-broadway-neon-tour.jpg",
         imageAlt:
-          "Pedestrian bridge over the Cumberland River with Nashville, Tennessee skyline — Music City travel tour",
+          "Neon honky-tonk signs lighting up Broadway in Nashville, Tennessee at night — Music City travel tour",
         inquireOnly: true,
       },
       {
