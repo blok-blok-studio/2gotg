@@ -15,6 +15,7 @@ type Tour = {
   continent: string;
   destination: string;
   image: string;
+  imageAlt?: string;
   highlights?: string[];
   inquireOnly?: boolean;
   price?: string;
@@ -41,6 +42,8 @@ const tourGroups: TourGroup[] = [
         destination: "Palermo, Cefalu, Marsala/Erice, Scopello",
         image:
           "/images/destinations/sicily-italy-escape-travel-package-2026-tour.jpg",
+        imageAlt:
+          "Coastal scenery in Sicily, Italy — Bella Sicilia summer travel package with 2 Girls on the Go",
         price: "Starting at $1,750",
         spotsAvailable: 5,
         joinDeadline: "Contact Heidie by May 15, 2026 to join this tour.",
@@ -67,6 +70,8 @@ const tourGroups: TourGroup[] = [
         destination: "Matka, Vodno, Ohrid, Mavrovo & beyond",
         image:
           "/images/destinations/lake-ohrid-north-macedonia-crystal-water-aerial-tour.jpg",
+        imageAlt:
+          "Aerial view of crystal-clear Lake Ohrid waters in North Macedonia — Macedonian Heritage travel tour",
         price: "Starting at $550",
         highlights: [
           "Matka Canyon",
@@ -91,6 +96,8 @@ const tourGroups: TourGroup[] = [
         destination: "Berlin, Germany",
         image:
           "/images/destinations/berlin-brandenburg-gate-germany-travel-tour.jpg",
+        imageAlt:
+          "Brandenburg Gate landmark in Berlin, Germany — Berlin Wanderlust custom travel package",
         inquireOnly: true,
       },
       {
@@ -101,6 +108,8 @@ const tourGroups: TourGroup[] = [
         destination: "London, England",
         image:
           "/images/destinations/london-buckingham-palace-england-travel-tour.jpg",
+        imageAlt:
+          "Buckingham Palace in London, England — Royal London custom travel package",
         inquireOnly: true,
       },
       {
@@ -111,6 +120,8 @@ const tourGroups: TourGroup[] = [
         destination: "Athens, Santorini & the islands",
         image:
           "https://images.unsplash.com/photo-1503152394-c571994fd383?w=1400&q=80",
+        imageAlt:
+          "Whitewashed buildings of Santorini overlooking the Aegean Sea, Greece — Greek Odyssey custom travel package",
         inquireOnly: true,
       },
     ],
@@ -126,7 +137,9 @@ const tourGroups: TourGroup[] = [
         continent: "North America",
         destination: "Savannah, Georgia",
         image:
-          "https://images.unsplash.com/photo-1546874177-9e664107314e?w=2000&q=90&auto=format&fit=crop",
+          "/images/destinations/savannah-georgia-river-street-tour.jpg",
+        imageAlt:
+          "Aerial sunset view of historic Savannah, Georgia skyline with church steeple and Talmadge Bridge in the distance — Savannah Charm travel tour",
         inquireOnly: true,
       },
       {
@@ -137,6 +150,8 @@ const tourGroups: TourGroup[] = [
         destination: "Nashville, Tennessee",
         image:
           "/images/destinations/nashville-tennessee-lukes-32-bridge-tour.jpg",
+        imageAlt:
+          "Pedestrian bridge over the Cumberland River with Nashville, Tennessee skyline — Music City travel tour",
         inquireOnly: true,
       },
       {
@@ -147,6 +162,8 @@ const tourGroups: TourGroup[] = [
         destination: "Napa Valley, California",
         image:
           "https://images.unsplash.com/photo-1474722883778-792e7990302f?w=2000&q=90&auto=format&fit=crop",
+        imageAlt:
+          "Rolling vineyard rows in Napa Valley, California wine country — Napa Wine Country travel tour",
         inquireOnly: true,
       },
       {
@@ -157,6 +174,8 @@ const tourGroups: TourGroup[] = [
         destination: "Gulf Shores, Alabama",
         image:
           "/images/destinations/gulf-shores-alabama-sunset-beach-tour.jpg",
+        imageAlt:
+          "Sunset over the white-sand beach in Gulf Shores, Alabama — Gulf Coast Escape travel tour",
         inquireOnly: true,
       },
       {
@@ -166,7 +185,9 @@ const tourGroups: TourGroup[] = [
         continent: "North America",
         destination: "Calgary, Alberta",
         image:
-          "https://images.unsplash.com/photo-1517935706615-2717063c2225?w=2000&q=90&auto=format&fit=crop",
+          "/images/destinations/calgary-alberta-canadian-rockies-trail-tour.jpg",
+        imageAlt:
+          "Hiking trail with waterfall and Canadian Rockies peaks near Calgary, Alberta — Calgary Stampede travel tour",
         inquireOnly: true,
       },
     ],
@@ -250,7 +271,7 @@ export function PackageTours() {
                       onClick={() =>
                         setLightbox({
                           src: tour.image,
-                          alt: `${tour.themedName} tour package, ${tour.destination}`,
+                          alt: tour.imageAlt ?? `${tour.themedName} tour package, ${tour.destination}`,
                         })
                       }
                       className="relative aspect-[16/9] overflow-hidden rounded-t-2xl block w-full cursor-zoom-in"
@@ -258,7 +279,7 @@ export function PackageTours() {
                     >
                       <Image
                         src={tour.image}
-                        alt={`${tour.themedName} tour package, ${tour.destination}`}
+                        alt={tour.imageAlt ?? `${tour.themedName} tour package, ${tour.destination}`}
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                         sizes="(max-width: 768px) 100vw, 50vw"
@@ -392,7 +413,7 @@ export function PackageTours() {
                       onClick={() =>
                         setLightbox({
                           src: tour.image,
-                          alt: `${tour.themedName} tour package, ${tour.destination}`,
+                          alt: tour.imageAlt ?? `${tour.themedName} tour package, ${tour.destination}`,
                         })
                       }
                       className="relative aspect-[16/9] overflow-hidden rounded-t-2xl block w-full cursor-zoom-in"
@@ -400,7 +421,7 @@ export function PackageTours() {
                     >
                       <Image
                         src={tour.image}
-                        alt={`${tour.themedName} tour package, ${tour.destination}`}
+                        alt={tour.imageAlt ?? `${tour.themedName} tour package, ${tour.destination}`}
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                         sizes="(max-width: 768px) 100vw, 50vw"
