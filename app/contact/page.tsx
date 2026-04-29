@@ -10,6 +10,14 @@ export const metadata: Metadata = {
   title: "Contact Heidie",
   description:
     "Contact Heidie at 2 Girls on the Go. Request a personalized itinerary, ask a question, or start planning your next trip today.",
+  alternates: { canonical: `${siteConfig.url}/contact` },
+  openGraph: {
+    title: "Contact Heidie | 2 Girls on the Go",
+    description:
+      "Contact Heidie at 2 Girls on the Go. Request a personalized itinerary, ask a question, or start planning your next trip today.",
+    url: `${siteConfig.url}/contact`,
+    type: "website",
+  },
 };
 
 export default function ContactPage() {

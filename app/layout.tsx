@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   metadataBase: new URL(siteConfig.url),
+  alternates: { canonical: siteConfig.url },
   icons: {
     icon: [
       { url: "/icon.svg", type: "image/svg+xml" },
@@ -41,6 +42,32 @@ export const metadata: Metadata = {
   },
 };
 
+const travelAgencySchema = {
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  name: siteConfig.name,
+  description: siteConfig.description,
+  url: siteConfig.url,
+  logo: `${siteConfig.url}/brand/2-girls-on-the-go-travel-logo-v2.png`,
+  image: `${siteConfig.url}/brand/2-girls-on-the-go-travel-logo-v2.png`,
+  telephone: siteConfig.contact.phone,
+  email: siteConfig.contact.email,
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "US",
+  },
+  founder: {
+    "@type": "Person",
+    name: "Heidie Haynes",
+  },
+  sameAs: [
+    siteConfig.social.instagram,
+    siteConfig.social.facebook,
+    siteConfig.social.linktree,
+  ],
+  slogan: siteConfig.tagline,
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -64,6 +91,10 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(travelAgencySchema) }}
+        />
         <Navbar />
         <main>{children}</main>
         <Footer />

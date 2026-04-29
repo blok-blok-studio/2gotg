@@ -10,6 +10,15 @@ export function CTA() {
     <section className="py-24 lg:py-32 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#0B1120] via-primary-dark to-[#0B1120]" />
+      {/* Light-to-dark fade from previous section */}
+      <div
+        className="absolute inset-x-0 top-0 h-24 pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(to bottom, #F0F9FF 0%, rgba(11, 17, 32, 0) 100%)",
+        }}
+        aria-hidden
+      />
       <div className="absolute inset-0" aria-hidden>
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-cta/8 rounded-full blur-3xl" />

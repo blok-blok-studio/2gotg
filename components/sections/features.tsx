@@ -34,7 +34,7 @@ const features = [
 
 export function Features() {
   return (
-    <section className="py-24 lg:py-32 relative" style={{ background: "linear-gradient(to bottom, #F0F9FF, white 15%, white 85%, #F0F9FF)" }}>
+    <section className="py-24 lg:py-32 relative" style={{ background: "linear-gradient(to bottom, white, #F0F9FF)" }}>
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-6">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 lg:mb-20">

@@ -30,7 +30,12 @@ const regions = [
 
 export function ContinentNav() {
   return (
-    <section className="py-12 lg:py-16 bg-white border-b border-border">
+    <section
+      className="py-12 lg:py-16"
+      style={{
+        background: "linear-gradient(to bottom, white, #F0F9FF)",
+      }}
+    >
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-6">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
           <div>

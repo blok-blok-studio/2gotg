@@ -205,8 +205,7 @@ export function PackageTours() {
       id="package-tours"
       className="py-24 lg:py-32 relative"
       style={{
-        background:
-          "linear-gradient(to bottom, #F0F9FF, white 15%, white 85%, #F0F9FF)",
+        background: "linear-gradient(to bottom, #F0F9FF, white)",
       }}
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-6">

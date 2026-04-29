@@ -1,77 +1,8 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { TourDetail, type TourData } from "./tour-detail";
-
-const tours: Record<string, TourData> = {
-  "sicily-summer": {
-    slug: "sicily-summer",
-    name: "Bella Sicilia",
-    destination: "Europe · Italy, Palermo, Cefalu, Marsala/Erice, Scopello",
-    duration: "7 Days / 6 Nights",
-    price: "From $1,750",
-    rating: 5.0,
-    image:
-      "/images/destinations/sicily-italy-escape-travel-package-2026-tour.jpg",
-    flyer: "/images/destinations/sicily-italy-2girls-on-the-go-tour-flyer-2026.jpg",
-    flyerAlt:
-      "Bella Sicilia 2026 tour flyer, 2 Girls on the Go travel package to Palermo, Cefalu, Marsala, Erice, and Scopello",
-    description:
-      "A week in Sicily based out of a private villa with pool, gardens, and outdoor kitchen, beach access, bilingual hostess, and curated experiences across Palermo, Cefalu, Marsala/Erice, and Scopello.",
-    highlights: [
-      "Palermo historical tour and street food experience",
-      "Cefalu UNESCO cathedral, shopping, and beach day",
-      "Marsala wineries and Castle Venus in Erice",
-      "Scopello hiking and Zingaro Nature Reserve",
-      "Valle dei Templi UNESCO ancient Greek architecture",
-      "Salt Road shimmering pans and ancient windmills",
-    ],
-    included: [
-      "Flights",
-      "Airport and daily transportation",
-      "Bilingual guide/hostess, curated experiences",
-      "Private villa (up to 6 guests), pool, gardens, outdoor kitchen, access to beach",
-      "Optional tours available, e.g. boat tour / wine tour",
-    ],
-    notIncluded: [
-      "Travel insurance",
-      "Meals",
-    ],
-  },
-
-  "macedonia-tour": {
-    slug: "macedonia-tour",
-    name: "Macedonian Heritage",
-    destination: "Europe · North Macedonia, Matka, Vodno, Ohrid, Mavrovo",
-    duration: "6 Days / 7 Nights or 4 Days / 3 Nights",
-    price: "From $550",
-    rating: 5.0,
-    image:
-      "/images/destinations/lake-ohrid-north-macedonia-crystal-water-aerial-tour.jpg",
-    description:
-      "An immersive small-group cultural experience across North Macedonia, Matka Canyon, Vodno Mountain, Lake Ohrid, Mavrovo, and the Orthodox monasteries, with all meals, accommodations, and tickets included.",
-    highlights: [
-      "Matka Canyon",
-      "Vodno Mountain",
-      "Duf Waterfalls",
-      "Ohrid and Mavrovo Lakes",
-      "Vevcani village",
-      "Orthodox monasteries",
-    ],
-    included: [
-      "Flights",
-      "Airport pick-ups",
-      "Multi-lingual guide (English, Spanish, Italian)",
-      "Private transportation in comfortable van",
-      "All meals (breakfasts, lunches, dinners, & coffee breaks)",
-      "All accommodations",
-      "All tickets (museums, boat rides, monasteries & more)",
-    ],
-    notIncluded: [
-      "Travel insurance",
-      "Alcoholic drinks",
-    ],
-  },
-};
+import { TourDetail } from "./tour-detail";
+import { tours } from "@/lib/tours";
+import { siteConfig } from "@/config/site";
 
 export function generateStaticParams() {
   return Object.keys(tours).map((slug) => ({ slug }));
@@ -86,13 +17,24 @@ export async function generateMetadata({
   const tour = tours[slug];
   if (!tour) return { title: "Tour Not Found" };
 
+  const canonical = `${siteConfig.url}/tours/${slug}`;
+
   return {
     title: `${tour.name}, ${tour.duration}`,
     description: tour.description,
+    alternates: { canonical },
     openGraph: {
       title: `${tour.name} | 2 Girls on the Go`,
       description: tour.description,
-      images: [{ url: tour.image, width: 1200, height: 630 }],
+      url: canonical,
+      images: [{ url: tour.image, width: 1200, height: 630, alt: tour.name }],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${tour.name} | 2 Girls on the Go`,
+      description: tour.description,
+      images: [tour.image],
     },
   };
 }
@@ -106,5 +48,43 @@ export default async function TourPage({
   const tour = tours[slug];
   if (!tour) notFound();
 
-  return <TourDetail tour={tour} />;
+  const tripSchema = {
+    "@context": "https://schema.org",
+    "@type": "TouristTrip",
+    name: tour.name,
+    description: tour.description,
+    image: `${siteConfig.url}${tour.image}`,
+    url: `${siteConfig.url}/tours/${tour.slug}`,
+    touristType: "Leisure",
+    itinerary: {
+      "@type": "ItemList",
+      itemListElement: tour.highlights.map((h, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: h,
+      })),
+    },
+    offers: {
+      "@type": "Offer",
+      price: tour.price.replace(/[^0-9.]/g, ""),
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+      url: `${siteConfig.url}/contact`,
+    },
+    provider: {
+      "@type": "TravelAgency",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(tripSchema) }}
+      />
+      <TourDetail tour={tour} />
+    </>
+  );
 }

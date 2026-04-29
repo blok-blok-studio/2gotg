@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/config/site";
+import { tourSlugs } from "@/lib/tours";
 
 const staticRoutes: { path: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"] }[] = [
   { path: "", priority: 1.0, changeFrequency: "weekly" },
@@ -7,13 +8,6 @@ const staticRoutes: { path: string; priority: number; changeFrequency: MetadataR
   { path: "/about", priority: 0.6, changeFrequency: "monthly" },
   { path: "/contact", priority: 0.6, changeFrequency: "monthly" },
   { path: "/plan", priority: 0.7, changeFrequency: "monthly" },
-];
-
-const tourSlugs = [
-  "sicily-summer",
-  "sicilian-discovery",
-  "macedonia-tour",
-  "berlin-adventure",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

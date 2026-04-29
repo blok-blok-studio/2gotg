@@ -59,7 +59,7 @@ const experiences = [
 
 export function Experiences() {
   return (
-    <section className="py-24 lg:py-32" style={{ background: "linear-gradient(to bottom, #F0F9FF, white 20%, white 80%, #F0F9FF)" }}>
+    <section className="py-24 lg:py-32" style={{ background: "linear-gradient(to bottom, #F0F9FF, white)" }}>
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <motion.p
