@@ -117,7 +117,9 @@ const travelAgencySchema = {
   priceRange: "$$-$$$",
   address: {
     "@type": "PostalAddress",
-    addressCountry: "US",
+    addressLocality: siteConfig.contact.locality,
+    addressRegion: siteConfig.contact.region,
+    addressCountry: siteConfig.contact.country,
   },
   areaServed: ["US", "Worldwide"],
   founder: {
