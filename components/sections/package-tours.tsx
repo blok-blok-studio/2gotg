@@ -185,9 +185,9 @@ const tourGroups: TourGroup[] = [
         continent: "North America",
         destination: "Calgary, Alberta",
         image:
-          "/images/destinations/calgary-alberta-canadian-rockies-trail-tour.jpg",
+          "/images/destinations/calgary-alberta-downtown-skyline-tour.jpg",
         imageAlt:
-          "Hiking trail with waterfall and Canadian Rockies peaks near Calgary, Alberta — Calgary Stampede travel tour",
+          "Downtown Calgary, Alberta skyline at dusk with the Bow tower and Centre Street Bridge over the Bow River — Calgary Stampede travel tour",
         inquireOnly: true,
       },
     ],
