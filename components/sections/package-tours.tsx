@@ -39,13 +39,13 @@ const tourGroups: TourGroup[] = [
         themedName: "Bella Sicilia",
         country: "Italy",
         continent: "Europe",
-        destination: "Palermo, Cefalu, Marsala/Erice, Scopello",
+        destination: "Palermo, Cefalu, Scopello, Valle dei Templi, Marsala/Erice, Isola Bella",
         image:
           "/images/destinations/sicily-italy-escape-travel-package-2026-tour.jpg",
         imageAlt:
           "Coastal scenery in Sicily, Italy — Bella Sicilia summer travel package with 2 Girls on the Go",
         price: "Starting at $1,750",
-        spotsAvailable: 5,
+        spotsAvailable: 3,
         joinDeadline: "Contact Heidie by May 15, 2026 to join this tour.",
         highlights: [
           "Palermo historical tour and street food experience",

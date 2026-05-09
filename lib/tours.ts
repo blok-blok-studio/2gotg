@@ -4,7 +4,7 @@ export const tours: Record<string, TourData> = {
   "sicily-summer": {
     slug: "sicily-summer",
     name: "Bella Sicilia",
-    destination: "Europe · Italy, Palermo, Cefalu, Marsala/Erice, Scopello",
+    destination: "Europe · Italy, Palermo, Cefalu, Scopello, Valle dei Templi, Marsala/Erice, Isola Bella",
     duration: "7 Days / 6 Nights",
     price: "From $1,750",
     rating: 5.0,
@@ -12,7 +12,7 @@ export const tours: Record<string, TourData> = {
       "/images/destinations/sicily-italy-escape-travel-package-2026-tour.jpg",
     flyer: "/images/destinations/sicily-italy-2girls-on-the-go-tour-flyer-2026.jpg",
     flyerAlt:
-      "Bella Sicilia 2026 tour flyer, 2 Girls on the Go travel package to Palermo, Cefalu, Marsala, Erice, and Scopello",
+      "Bella Sicilia 2026 tour flyer, 2 Girls on the Go travel package to Palermo, Cefalu, Scopello, Valle dei Templi, Marsala, Erice, and Isola Bella",
     description:
       "A week in Sicily based out of a private villa with pool, gardens, and outdoor kitchen, beach access, bilingual hostess, and curated experiences across Palermo, Cefalu, Marsala/Erice, and Scopello.",
     highlights: [
