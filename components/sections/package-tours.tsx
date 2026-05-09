@@ -41,9 +41,9 @@ const tourGroups: TourGroup[] = [
         continent: "Europe",
         destination: "Palermo, Cefalu, Scopello, Valle dei Templi, Marsala/Erice, Isola Bella",
         image:
-          "/images/destinations/sicily-italy-escape-travel-package-2026-tour.jpg",
+          "/images/destinations/sicily-italy-2girls-on-the-go-tour-flyer-2026.jpg",
         imageAlt:
-          "Coastal scenery in Sicily, Italy — Bella Sicilia summer travel package with 2 Girls on the Go",
+          "Bella Sicilia 2026 tour flyer, 2 Girls on the Go travel package to Sicily, Italy",
         price: "Starting at $1,750",
         spotsAvailable: 3,
         joinDeadline: "Contact Heidie by May 15, 2026 to join this tour.",
@@ -231,6 +231,7 @@ export function PackageTours() {
             .map((group) => {
               const tour = group.tours[0];
               const anchor = group.country.toLowerCase().replace(/\s+/g, "-");
+              const isFlyer = tour.image.includes("flyer");
               return (
                 <div key={`${group.continent}-${group.country}`} id={anchor}>
                   {/* Group header */}
@@ -273,26 +274,30 @@ export function PackageTours() {
                           alt: tour.imageAlt ?? `${tour.themedName} tour package, ${tour.destination}`,
                         })
                       }
-                      className="relative aspect-[16/9] overflow-hidden rounded-t-2xl block w-full cursor-zoom-in"
+                      className={`relative ${isFlyer ? "aspect-[8.5/11] bg-[#f5ede0]" : "aspect-[16/9]"} overflow-hidden rounded-t-2xl block w-full cursor-zoom-in`}
                       aria-label={`View ${tour.themedName} flyer full size`}
                     >
                       <Image
                         src={tour.image}
                         alt={tour.imageAlt ?? `${tour.themedName} tour package, ${tour.destination}`}
                         fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        className={`${isFlyer ? "object-contain" : "object-cover"} transition-transform duration-500 group-hover:scale-105`}
                         sizes="(max-width: 768px) 100vw, 50vw"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                      {!isFlyer && (
+                        <>
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                          <div className="absolute bottom-4 left-4">
+                            <span className="inline-flex items-center gap-1.5 bg-white/90 backdrop-blur-sm text-xs font-semibold px-3 py-1.5 rounded-full text-foreground">
+                              <MapPin className="h-3 w-3 text-primary" />
+                              {tour.destination}
+                            </span>
+                          </div>
+                        </>
+                      )}
                       <span className="absolute bottom-4 right-4 inline-flex items-center justify-center h-8 w-8 bg-white/90 backdrop-blur-sm rounded-full text-foreground shadow-md">
                         <Maximize2 className="h-3.5 w-3.5" />
                       </span>
-                      <div className="absolute bottom-4 left-4">
-                        <span className="inline-flex items-center gap-1.5 bg-white/90 backdrop-blur-sm text-xs font-semibold px-3 py-1.5 rounded-full text-foreground">
-                          <MapPin className="h-3 w-3 text-primary" />
-                          {tour.destination}
-                        </span>
-                      </div>
                     </button>
 
                     {/* Content */}
