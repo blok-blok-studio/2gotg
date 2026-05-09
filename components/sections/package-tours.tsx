@@ -224,8 +224,8 @@ export function PackageTours() {
           </p>
         </div>
 
-        {/* Featured single-tour regions side-by-side */}
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8 mb-16 lg:mb-20">
+        {/* Featured single-tour regions, stacked as horizontal banners */}
+        <div className="space-y-10 lg:space-y-14 mb-16 lg:mb-20">
           {tourGroups
             .filter((g) => g.tours.length === 1)
             .map((group) => {
@@ -248,13 +248,12 @@ export function PackageTours() {
                     {...(canHover
                       ? {
                           whileHover: {
-                            y: -6,
-                            rotate: 0.5,
+                            y: -4,
                             transition: { duration: 0.2 },
                           },
                         }
                       : {})}
-                    className="group relative bg-white rounded-2xl border border-border overflow-hidden transform-gpu hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
+                    className="group relative bg-white rounded-2xl border border-border overflow-hidden transform-gpu hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 md:grid md:grid-cols-12"
                   >
                     {/* Share button */}
                     <div className="absolute top-4 right-4 z-10">
@@ -274,15 +273,19 @@ export function PackageTours() {
                           alt: tour.imageAlt ?? `${tour.themedName} tour package, ${tour.destination}`,
                         })
                       }
-                      className={`relative ${isFlyer ? "aspect-[8.5/11] bg-[#f5ede0]" : "aspect-[16/9]"} overflow-hidden rounded-t-2xl block w-full cursor-zoom-in`}
+                      className={`relative md:col-span-5 lg:col-span-4 overflow-hidden block w-full cursor-zoom-in ${
+                        isFlyer
+                          ? "aspect-[8.5/11] md:aspect-auto bg-[#f5ede0]"
+                          : "aspect-[16/9] md:aspect-auto"
+                      }`}
                       aria-label={`View ${tour.themedName} flyer full size`}
                     >
                       <Image
                         src={tour.image}
                         alt={tour.imageAlt ?? `${tour.themedName} tour package, ${tour.destination}`}
                         fill
-                        className={`${isFlyer ? "object-contain" : "object-cover"} transition-transform duration-500 group-hover:scale-105`}
-                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className={`${isFlyer ? "object-contain" : "object-cover"} transition-transform duration-500 group-hover:scale-[1.03]`}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 42vw, 33vw"
                       />
                       {!isFlyer && (
                         <>
@@ -301,10 +304,17 @@ export function PackageTours() {
                     </button>
 
                     {/* Content */}
-                    <div className="p-5 lg:p-6">
-                      <h4 className="font-[var(--font-heading)] text-lg lg:text-xl font-semibold text-foreground group-hover:text-primary transition-colors mb-3">
+                    <div className="p-5 lg:p-8 md:col-span-7 lg:col-span-8 flex flex-col">
+                      <h4 className="font-[var(--font-heading)] text-xl lg:text-2xl font-semibold text-foreground group-hover:text-primary transition-colors mb-3">
                         {tour.themedName}
                       </h4>
+
+                      {isFlyer && (
+                        <p className="flex items-start gap-1.5 text-sm text-muted mb-4">
+                          <MapPin className="h-3.5 w-3.5 text-primary mt-0.5 shrink-0" />
+                          {tour.destination}
+                        </p>
+                      )}
 
                       {(tour.price || tour.spotsAvailable) && (
                         <div className="flex flex-wrap items-center gap-2 mb-4">
@@ -332,7 +342,7 @@ export function PackageTours() {
 
                       {tour.highlights && tour.highlights.length > 0 ? (
                         <>
-                          <ul className="space-y-1.5 mb-5">
+                          <ul className="space-y-1.5 mb-5 flex-1">
                             {tour.highlights.map((highlight) => (
                               <li
                                 key={highlight}
@@ -354,7 +364,7 @@ export function PackageTours() {
                       ) : (
                         <Link
                           href="/contact"
-                          className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-cta text-white font-semibold text-sm hover:bg-cta-hover transition-colors duration-200 group/btn cursor-pointer"
+                          className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-cta text-white font-semibold text-sm hover:bg-cta-hover transition-colors duration-200 group/btn cursor-pointer mt-auto"
                         >
                           Inquire Now
                           <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover/btn:translate-x-1" />
